@@ -1,4 +1,14 @@
+
+## For build on ligne:
 sudo docker build -t skyrim-hello . && sudo docker run -p 8080:8080 skyrim-hello
+
+or
+## For build local:
+
+export DOCKER_BUILDKIT=1
+
+sudo docker build \
+  -t skyrim-hello . && sudo docker run -v ~/.m2:/root/.m2 -p 8080:8080 skyrim-hello
 
 ## Notice Git
 echo "# skyneo" >> README.md

@@ -1,4 +1,17 @@
 <div class="skyrim-layout">
+     <nav class="skyrim-menu">
+      <ul>
+        <a class="navbar-brand" routerLink="/">Skyneo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/users" routerLinkActive="active">Utilisateurs</a>
+            </li>
+            <!-- Ajoute ici d'autres liens si besoin -->
+      </ul>
+    </nav>
+
   <nav class="skyrim-menu">
     <ul>
       <li *ngFor="let menu of menus; let i = index"

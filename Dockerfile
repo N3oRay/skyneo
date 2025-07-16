@@ -18,6 +18,13 @@ COPY backend/pom.xml backend/
 COPY backend/src backend/src
 COPY --from=build-frontend /app/frontend/dist/ ./backend/src/main/resources/static/
 WORKDIR /app/backend
+
+# Restore dependencies (utilise le cache Docker si pom.xml n'a pas changé)
+
+# Utilise le cache local Maven pour accélérer les builds suivants
+RUN mvn dependency:go-offline
+
+# Compile le projet (utilise le cache Maven)
 RUN mvn clean package -DskipTests
 
 # Runtime
