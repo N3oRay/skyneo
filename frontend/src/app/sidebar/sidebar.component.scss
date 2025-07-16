@@ -1,0 +1,50 @@
+.sidenav-container {
+  height: 100vh;
+  background: #18191c;
+}
+.sidenav {
+  width: 300px;
+  background: #18191c;
+  color: #fff;
+}
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #18191c;
+}
+.menu-btn {
+  margin-right: 8px;
+  color: #fff !important;
+}
+.recent-title, .more-title {
+  padding: 16px 16px 0 16px;
+  color: #bbb;
+  font-size: 13px;
+  font-weight: 600;
+}
+.recent-avatars {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 8px 16px;
+  .avatar {
+    margin-bottom: 8px;
+    font-size: 36px;
+    color: #fff;
+  }
+}
+mat-list-item {
+  margin-left: 8px;
+  border-radius: 4px;
+  &:hover {
+    background: #23242a;
+  }
+  mat-icon {
+    margin-right: 16px;
+  }
+}
+mat-divider {
+  background: #333;
+}

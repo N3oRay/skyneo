@@ -5,8 +5,16 @@ COPY frontend/package*.json ./
 RUN rm -rf node_modules package-lock.json
 RUN npm config set registry https://registry.npmjs.org/
 RUN npm cache clean --force
-RUN npm install
 RUN npm install bootstrap
+RUN npm install material
+RUN npm install material-icons
+RUN npm install --legacy-peer-deps
+# RUN npm install @angular/material @angular/cdk @angular/animations
+# RUN npm install --save angular/material2-builds angular/cdk-builds angular/animations-builds
+# RUN npm install --save @angular/material @angular/cdk @angular/animations
+# RUN npm install --save @angular/material @angular/cdk
+# RUN npm install @angular/cdk
+
 # RUN npm ci
 COPY frontend/ ./
 RUN npm run build --prod
