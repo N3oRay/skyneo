@@ -1,0 +1,30 @@
+<div class="skyrim-layout">
+  <nav class="skyrim-menu">
+    <ul>
+      <li *ngFor="let menu of menus; let i = index"
+          [class.selected]="i === selectedMenuIndex"
+          (click)="selectMenu(i)">
+        {{ menu.label }}
+        <ul *ngIf="i === selectedMenuIndex">
+          <li *ngFor="let sub of menu.subItems; let j = index"
+              [class.selected]="j === selectedSubmenuIndex"
+              (click)="selectSubmenu(j); $event.stopPropagation()">
+            {{ sub.label }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="skyrim-content">
+    <div class="skyrim-frame"
+         *ngIf="menus[selectedMenuIndex].subItems?.[selectedSubmenuIndex]"
+         [@articleFade]>
+      <div class="skyrim-title">
+        {{ menus[selectedMenuIndex].subItems?.[selectedSubmenuIndex]?.label || 'Sélectionne un article' }}
+      </div>
+      <div class="skyrim-message">
+        {{ selectedContent }}
+      </div>
+    </div>
+  </main>
+</div>
