@@ -3,14 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MdCardModule, MdInputModule } from '@angular/material';
-import { mixinColor, MatCommonModule } from '@angular/material/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
+import { NgIconsModule, provideNgIconsConfig} from '@ng-icons/core';
+import { featherAirplay, featherUser, featherVideo, featherSmile, featherSearch,
+    featherPower, featherInstagram, featherInfo, featherHexagon, featherGlobe, featherCoffee, featherCircle, featherActivity } from '@ng-icons/feather-icons';
+import { heroUsers } from '@ng-icons/heroicons/outline';
+
+//import chalk from 'chalk';
+
+//console.log(chalk.blue('Hello world!'));
+console.log('Hello world!');
 
 /*
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
@@ -37,17 +38,17 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule, // requis pour Angular Material
-    MatCommonModule,
-    MatSlideToggleModule,
-    MatSidenavModule,        // <- obligatoire pour <mat-sidenav-content> !
-    MatListModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDividerModule,
+    NgIconsModule.withIcons({ featherAirplay, featherUser, featherVideo, featherSmile, featherSearch,
+    featherPower, featherInstagram, featherInfo, featherHexagon, featherGlobe, featherCoffee, featherCircle, featherActivity, heroUsers })
    // RouterModule,
     // autres modules
   ],
-  providers: [],
+  providers: [
+    provideNgIconsConfig({
+      size: '1.0em',
+      color: 'white',
+    }),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

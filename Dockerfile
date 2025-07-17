@@ -1,19 +1,24 @@
 # Build frontend (Angular)
 FROM node:20-alpine as build-frontend
+
+# Build Cache
+## WORKDIR /tmp/
+# Copy dependencies
+## COPY bootstrap-main.zip /tmp/
+## RUN npm cache add bootstrap-main.zip
+
+
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN rm -rf node_modules package-lock.json
 RUN npm config set registry https://registry.npmjs.org/
 RUN npm cache clean --force
+# RUN npm install bootstrap --offline
 RUN npm install bootstrap
-RUN npm install material
-RUN npm install material-icons
-RUN npm install --legacy-peer-deps
-# RUN npm install @angular/material @angular/cdk @angular/animations
-# RUN npm install --save angular/material2-builds angular/cdk-builds angular/animations-builds
-# RUN npm install --save @angular/material @angular/cdk @angular/animations
-# RUN npm install --save @angular/material @angular/cdk
-# RUN npm install @angular/cdk
+# RUN npm install chalk
+RUN npm install --legacy-peer-deps --offline
+RUN npm install @ng-icons/core @ng-icons/heroicons @ng-icons/feather-icons
+
 
 # RUN npm ci
 COPY frontend/ ./

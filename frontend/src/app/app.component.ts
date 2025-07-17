@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { featherAirplay } from '@ng-icons/feather-icons';
+import { heroUsers } from '@ng-icons/heroicons/outline';
 
 interface MenuItem {
   label: string;
   subItems?: { label: string; content: string; }[];
 }
-
+/*
+@Component({
+  standalone: true,
+  imports: [NgIcon],
+  providers: [provideIcons({ featherAirplay, heroUsers })],
+})
+*/
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
