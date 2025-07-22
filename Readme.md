@@ -1,5 +1,11 @@
 
 
+** Build with docker compose:
+
+sudo docker-compose up
+
+
+
 *** For build on ligne:
 
 sudo docker build -t skyrim-hello . && sudo docker run -p 8080:8080 skyrim-hello
@@ -8,8 +14,6 @@ sudo docker build -t skyrim-hello . && sudo docker run -p 8080:8080 skyrim-hello
 *** For build local offline:
 
 export DOCKER_BUILDKIT=1
-
-
 
 sudo docker build -t skyrim-hello . && sudo docker run -v ~/.m2:/root/.m2 -p 8080:8080 skyrim-hello
 
