@@ -1,6 +1,7 @@
 # Build frontend (Angular)
 FROM node:20-alpine as build-frontend
 
+
 # Build Cache
 ## WORKDIR /tmp/
 # Copy dependencies
@@ -26,6 +27,7 @@ RUN npm run build --prod
 
 # Build backend (Spring Boot)
 FROM maven:3.9.6-eclipse-temurin-21-alpine as build-backend
+VOLUME ~/.m2
 WORKDIR /app
 COPY backend/pom.xml backend/
 COPY backend/src backend/src

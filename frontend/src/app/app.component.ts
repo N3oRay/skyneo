@@ -34,24 +34,44 @@ interface MenuItem {
 export class AppComponent {
   menus: MenuItem[] = [
     {
-      label: 'Quêtes',
+      label: 'Parc Informatique',
       subItems: [
-        { label: 'Principale', content: 'Voici la quête principale de Skyrim. Explore le monde, terrasse Alduin et sauve Bordeciel.' },
-        { label: 'Secondaires', content: 'Accomplis de nombreuses quêtes secondaires pour les guildes, villages et personnages.' }
+        { label: 'Principale', content: 'Site principale, Bureaux.' },
+        { label: 'Secondaires', content: 'Site distants, Clouds, Herbergements.' }
       ]
     },
     {
-      label: 'Personnages',
+      label: 'Infrastructures',
       subItems: [
-        { label: 'Dovahkiin', content: 'Le héros légendaire, porteur de la voix et du destin de Bordeciel.' },
-        { label: 'Alduin', content: 'Le dragon destructeur, menace ancestrale réveillée pour ravager le monde.' }
+        { label: 'Routeur', content: 'Listes des équippements réseaux.' },
+        { label: 'Firewall', content: 'Listes des équippements de protections, contrôle et accès.' },
+        { label: 'GPS', content: 'Antennes, et locations.' },
+        { label: 'Climatisations', content: 'Listes des équippements de ventilisations et climatisations' }
       ]
     },
     {
-      label: 'Objets',
+      label: 'Objets connectés',
       subItems: [
-        { label: 'Armes', content: 'Épée d\'Ebène, Arc de Daedra, haches légendaires… Trouve l\'arme qui te convient !' },
-        { label: 'Potions', content: 'Soigne-toi, fortifie tes compétences, ou deviens invisible grâce aux potions magiques.' }
+        { label: 'Audios', content: 'Ensemble des composants permettants la diffusions audios.' },
+        { label: 'Vidéos', content: 'Ensembles de écrans et outils de diffusions.' },
+        { label: 'Divers', content: 'Accessoires divers.' }
+      ]
+    },
+    {
+      label: 'Equippements',
+      subItems: [
+        { label: 'Portables', content: 'Ordinateurs portables.' },
+        { label: 'PC Fixes', content: 'Ordinateurs fixes, équippements de bureaux, équippements personnels.' },
+        { label: 'Téléphonies', content: 'Smartphones, tablettes, petits équippements.' }
+      ]
+    },
+    {
+      label: 'Configuration',
+      subItems: [
+        { label: 'Listes standards', content: 'Listes complètes des équippements.' },
+        { label: 'Listes Watts', content: 'Classements des équippements en fonction de leur consommation.' },
+        { label: 'Spécifications techniques', content: 'Smartphones, tablettes, petits équippements, serveurs, pc fixe. Détails des spécifications.' },
+        { label: 'Veilles technologiques', content: 'Définitions et documations.' }
       ]
     }
   ];

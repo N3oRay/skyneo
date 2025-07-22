@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap');
 
 .skyrim-layout {
   display: flex;
@@ -10,7 +12,8 @@
   width: 260px;
   background: rgba(35, 43, 43, 0.98);
   border-right: 3px solid #cbb26a;
-  font-family: 'UnifrakturCook', cursive;
+  //font-family: 'UnifrakturCook', cursive;
+  font-family: 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
   color: #cbb26a;
   padding: 2rem 0.5rem 2rem 1.5rem;
 
@@ -81,6 +84,7 @@
 
 .skyrim-title {
   font-family: 'UnifrakturCook', cursive;
+  //font-family: 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, cursive;
   font-size: 2rem;
   color: #cbb26a;
   letter-spacing: 1.5px;
