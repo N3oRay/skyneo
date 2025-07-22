@@ -4,7 +4,10 @@
 
 sudo docker-compose up
 
+** test BDD MYSQL
 
+sudo docker exec -it test_skyneo_mysql_1 bash
+$ mysql -u root -p
 
 *** For build on ligne:
 
