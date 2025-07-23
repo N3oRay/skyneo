@@ -9,6 +9,25 @@ sudo docker-compose up
 sudo docker exec -it test_skyneo_mysql_1 bash
 $ mysql -u root -p
 
+** sample MySQL
+show databases;
+SHOW FULL TABLES FROM mydb;
+
++----------------+------------+
+| Tables_in_mydb | Table_type |
++----------------+------------+
+| choices        | BASE TABLE |
+| polls          | BASE TABLE |
+| random_words   | BASE TABLE |
+| roles          | BASE TABLE |
+| user_roles     | BASE TABLE |
+| users          | BASE TABLE |
+| votes          | BASE TABLE |
++----------------+------------+
+7 rows in set (0.01 sec)
+
+
+
 *** For build on ligne:
 
 sudo docker build -t skyrim-hello . && sudo docker run -p 8080:8080 skyrim-hello
@@ -22,6 +41,10 @@ sudo docker build -t skyrim-hello . && sudo docker run -v ~/.m2:/root/.m2 -p 808
 
 *** run simple ***
 sudo docker run -p 8080:8080 skyrim-hello
+
+*** Notice Docker commande ***
+
+sudo docker exec CONTAINER_ID pwd
 
 *** Notice Git
 
