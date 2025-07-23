@@ -34,6 +34,15 @@ interface MenuItem {
 export class AppComponent {
   menus: MenuItem[] = [
     {
+      label: 'Le numérique responsable',
+      subItems: [
+        { label: 'C est quoi ?', content: "C'est une démarche qui vise à réduire notre impact environnemental liée à l'utisation technologiques. Actuellement nous devons être acteur, et avoir un comportement eco responsable, afin de limiter notre impact sur l'environnement." },
+        { label: 'Pourquoi ?', content: "Nous devons protéger notre environnement, nous devons préserver notre planet et pensez aux générations futur. Car le numérique est un secteur polluant qui émet du CO2. 50% est dû au fonctionnement d'internet. 50% est dû à la fabrication de nos appareils. Au total il représente 4% des émissions des gaz à effects de serre mondial. Au total il représente 1,5 fois plus de pollution que le transport aérien. Au total il représente 34 millards d'appareils, pour 4,1 millards d'utilisateurs."  },
+        { label: 'Conclusion', content: "Le numérique responsable est indispensable pour la préservation de notre environnement. C'est une démarche qui est accessible à tout le monde. Nous pouvons limiter notre impact en adoptant un comportement responsable, et en limitant notre consommation. A propos des écogestes simples : Réparer ses appareils endommagés. Déconnecter nos appareils, éviter de laisser en veille. Effacer régulièrement ses mails. Favoriser le Wifi à la 4G. "  },
+        { label: 'Label Eco responsable', content: "Pour préserver notre environnement, vous pouvez faire l'acquisition d'un label pour les entreprises: 'NR: Label numérique reponsable, Blue Angel: The german ecolabel, Nordic swan ecolabel"  }
+      ]
+    },
+    {
       label: 'Parc Informatique',
       subItems: [
         { label: 'Principale', content: 'Site principale, Bureaux.' },

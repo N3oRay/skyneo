@@ -1,5 +1,5 @@
 # Build frontend (Angular)
-FROM node:20-alpine as build-frontend
+FROM node:alpine as build-frontend
 
 
 # Build Cache
@@ -12,12 +12,23 @@ FROM node:20-alpine as build-frontend
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN rm -rf node_modules package-lock.json
-RUN npm config set registry https://registry.npmjs.org/
+RUN npm version
 RUN npm cache clean --force
+# sudo sysctl net.ipv6.conf.all.disable_ipv6=1
+# export NODE_OPTIONS="--dns-result-order=ipv4first"
+# RUN tracepath registry.npmjs.org
+RUN npm config set registry https://registry.npmjs.org/
+# if you use local registry - https://verdaccio.org/docs/configuration/
+# RUN npm config set registry http://localhost:4873/
+# RUN npm config set registry http://registry.npmjs.org
+# RUN npm set strict-ssl false
+RUN npm config list
 # RUN npm install bootstrap --offline
-RUN npm install bootstrap
+# RUN npm install bootstrap --loglevel verbose
+# RUN npm install react-bootstrap bootstrap
 # RUN npm install chalk
-RUN npm install --legacy-peer-deps --offline
+# RUN npm install --legacy-peer-deps --offline
+RUN npm install --loglevel verbose
 RUN npm install @ng-icons/core @ng-icons/heroicons @ng-icons/feather-icons
 
 
