@@ -6,11 +6,22 @@ sudo docker-compose up
 
 ** test BDD MYSQL
 
-sudo docker exec -it test_skyneo_mysql_1 bash
+sudo docker exec -it skyneo_mysql_1 bash
 $ mysql -u root -p
 
 ** sample MySQL
-show databases;
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| DashboardAdmin     |
+| information_schema |
+| mydb               |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+
 SHOW FULL TABLES FROM mydb;
 
 +----------------+------------+

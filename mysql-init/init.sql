@@ -92,13 +92,14 @@ CREATE TABLE IF NOT EXISTS `votes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP DATABASE IF EXISTS DashboardAdmin;
 CREATE DATABASE IF NOT EXISTS DashboardAdmin;
--- Creation du user principal de l'application (a adapter)  :
-CREATE USER 'dashuser'@'%' IDENTIFIED BY 'dashuser';
+
+USE DashboardAdmin;
+
+-- CREATE USER 'dashuser'@'%' IDENTIFIED BY 'dashuser';
 GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON DashboardAdmin.* TO 'dashuser'@'%';
 GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON *.* TO 'dashuser'@'%';
--- GRANT ALL PRIVILEGES ON *.* TO 'dashuser'@'%' IDENTIFIED BY 'dashuser';
--- Droit principal :
--- GRANT ALL PRIVILEGES ON *.* TO 'dashuser'@'localhost' IDENTIFIED BY 'dashuser';
--- Mise a jour des droits.
+GRANT ALL ON DashboardAdmin.* TO 'dashuser'@'%' WITH GRANT OPTION;
+-- GRANT ALL ON DashboardAdmin.* TO 'dashuser'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
