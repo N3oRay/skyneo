@@ -37,7 +37,7 @@ SHOW FULL TABLES FROM mydb;
 +----------------+------------+
 7 rows in set (0.01 sec)
 
-
+SHOW FULL TABLES FROM DashborardAdmin;
 
 *** For build on ligne:
 

@@ -64,11 +64,19 @@ public class DashboardAdminApp {
     }
 
     private static void logApplicationStartup(Environment env) {
+        log.info("Demarrage - logApplicationStartup.'");
         String protocol = "http";
         if (env.getProperty("server.ssl.key-store") != null) {
+            log.info("Demarrage de l'application en https : key-store valid.'");
             protocol = "https";
+        }else{
+            log.info("Demarrage de l'application en http uniquement: key-store invalid.'");
         }
-        String serverPort = env.getProperty("server.port");
+
+        String serverPort = "8080";
+        if (env.getProperty("server.port") != null) {
+            String serverPort = env.getProperty("server.port");
+        }
         String contextPath = env.getProperty("server.servlet.context-path");
         if (StringUtils.isBlank(contextPath)) {
             contextPath = "/";
