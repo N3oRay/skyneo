@@ -36,4 +36,4 @@ EXPOSE 8081
 
 # ENTRYPOINT ["java", "-jar", "app.jar"]
 # Run Application
-ENTRYPOINT ["java","-jar","app.jar","com.orange.obs.decc.DashboardAdminApp"]
+ENTRYPOINT ["java","-jar","app.jar","com.sos.obs.decc.DashboardAdminApp"]
