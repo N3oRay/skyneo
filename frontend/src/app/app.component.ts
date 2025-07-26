@@ -45,17 +45,17 @@ export class AppComponent {
     {
       label: 'Parc Informatique',
       subItems: [
-        { label: 'Principale', content: 'Site principale, Bureaux.' },
-        { label: 'Secondaires', content: 'Site distants, Clouds, Herbergements.' }
+        { label: 'Principale', content: 'Site principale, Bureaux. Conseils pratiques numérique responsable.' },
+        { label: 'Secondaires', content: 'Site distants, Clouds, Herbergements. Conseils pour être numérique responsable.' }
       ]
     },
     {
       label: 'Infrastructures',
       subItems: [
-        { label: 'Routeur', content: 'Listes des équippements réseaux.' },
-        { label: 'Firewall', content: 'Listes des équippements de protections, contrôle et accès.' },
+        { label: 'Routeur', content: 'Listes des équippements réseaux. Les élements imporants de vos infrastructures.' },
+        { label: 'Firewall', content: 'Listes des équippements de protections, contrôle et accès. Mieux dimensionner ses équippements.' },
         { label: 'GPS', content: 'Antennes, et locations.' },
-        { label: 'Climatisations', content: 'Listes des équippements de ventilisations et climatisations' }
+        { label: 'Climatisations', content: "Listes des équippements de ventilisations et climatisations. La consommation en énergie de vos équippements à une impact sur l'environment." }
       ]
     },
     {

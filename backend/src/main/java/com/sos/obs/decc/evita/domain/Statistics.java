@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
- * @Author Ahmed EL FAYAFI on avril, 2019
+ * @Author SLS --- on avril, 2019
  */
 @Entity
 @Table(name = "Statistics")

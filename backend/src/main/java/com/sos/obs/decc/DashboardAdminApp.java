@@ -57,14 +57,20 @@ public class DashboardAdminApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        log.info("1 - Demarrage - main.");
         SpringApplication app = new SpringApplication(DashboardAdminApp.class);
+        log.info("2 - Demarrage - main. SpringApplication");
         DefaultProfileUtil.addDefaultProfile(app);
+        log.info("3 - Demarrage - main. add Profile.");
         Environment env = app.run(args).getEnvironment();
+        log.info("4 - Demarrage - main. logApplicationStartup.");
+        //logger.info("Foo from System.getenv(): {}", System.getenv("bar"));
         logApplicationStartup(env);
+        log.info("5 - Demarrage - main. fin.");
     }
 
     private static void logApplicationStartup(Environment env) {
-        log.info("Demarrage - logApplicationStartup.'");
+        log.info("4 - 1 Demarrage - logApplicationStartup.'");
         String protocol = "http";
         if (env.getProperty("server.ssl.key-store") != null) {
             log.info("Demarrage de l'application en https : key-store valid.'");
@@ -72,11 +78,12 @@ public class DashboardAdminApp {
         }else{
             log.info("Demarrage de l'application en http uniquement: key-store invalid.'");
         }
-
+        log.info("4 - 2 Demarrage - serverPort.'");
         String serverPort = "8080";
         if (env.getProperty("server.port") != null) {
-            String serverPort = env.getProperty("server.port");
+            serverPort = env.getProperty("server.port");
         }
+        log.info("4 - 3 Demarrage - serverPort.'");
         String contextPath = env.getProperty("server.servlet.context-path");
         if (StringUtils.isBlank(contextPath)) {
             contextPath = "/";

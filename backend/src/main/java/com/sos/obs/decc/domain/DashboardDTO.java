@@ -18,7 +18,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * @Author Ahmed EL FAYAFI on mars, 2019
+ * @Author SLS --- on mars, 2019
  */
 @Entity
 @Table(name = "dashboard")

@@ -11,19 +11,15 @@ import com.sos.obs.decc.domain.Activites;
 
 
 /**
- * @Author Ahmed EL FAYAFI on mars, 2019
+ * @Author SLS --- on mars, 2019
  */
 
 @Repository
 public interface ActivitesRepository extends JpaRepository<Activites, String> {
-	
-	
-   // @EntityGraph(attributePaths = {"center"})
+
+
     List<Activites> findAll();
-
-    //@EntityGraph(attributePaths = {"center"})
     Optional<Activites> findById(Long activiteID);
-
 	Optional<Activites> findByName(String name);
 
 

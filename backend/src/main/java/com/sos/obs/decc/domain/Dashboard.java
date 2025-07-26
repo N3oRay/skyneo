@@ -22,7 +22,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 /**
- * @Author Ahmed EL FAYAFI on mars, 2019
+ * @Author SLS --- on mars, 2019
  */
 @Entity
 @Table(name = "dashboard")

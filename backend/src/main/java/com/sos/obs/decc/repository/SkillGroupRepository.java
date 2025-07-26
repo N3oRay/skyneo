@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * @Author Ahmed EL FAYAFI on mars, 2019
+ * @Author SLS --- on mars, 2019
  */
 
 @Repository

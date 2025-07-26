@@ -20,7 +20,7 @@ import com.sos.obs.decc.repository.AuthorityRepository;
 import com.sos.obs.decc.web.rest.util.PaginationUtil;
 
 /**
- * @Author Ahmed EL FAYAFI on mars, 2019
+ * @Author SLS --- on mars, 2019
  */
 
 @RestController

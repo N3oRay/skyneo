@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * @Author Ahmed EL FAYAFI on avril, 2019
+ * @Author SLS --- on avril, 2019
  */
 @Entity
 @Table(name = "afficheurs_cfg")

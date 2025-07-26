@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * @Author Ahmed EL FAYAFI on avr., 2019
+ * @Author SLS --- on avr., 2019
  */
 
 @Entity

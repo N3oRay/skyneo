@@ -4,7 +4,7 @@ import com.sos.obs.decc.domain.Statistics;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * @Author Ahmed EL FAYAFI on mai, 2019
+ * @Author SLS --- on mai, 2019
  */
 
 public interface StatisticsRepository1 extends JpaRepository<Statistics, String> {

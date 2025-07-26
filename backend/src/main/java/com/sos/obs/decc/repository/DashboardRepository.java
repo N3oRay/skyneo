@@ -13,21 +13,15 @@ import com.sos.obs.decc.domain.Dashboard;
 public interface DashboardRepository extends JpaRepository<Dashboard, String> {
 
 	Optional<Dashboard> findByName(String name);
-	
-	
+
 	Dashboard findById(int id);
 
-//	@EntityGraph(attributePaths = {"center"})
 	Optional<Dashboard> findByNameLike(String recherche);
 
     Optional<Dashboard> findOneByName(String name);
 
-//    @EntityGraph(attributePaths = {"center"})
     Optional<Dashboard> findOneWithScreensAndCentersById(String id);
-    
-//    @EntityGraph(attributePaths = {"screens", "center"})
+
     List<Dashboard> findByCenterId(String id);
 
-  
-    
 }

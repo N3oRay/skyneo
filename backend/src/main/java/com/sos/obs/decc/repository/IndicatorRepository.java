@@ -17,14 +17,12 @@ import com.sos.obs.decc.domain.Indicator;
 @Repository
 public interface IndicatorRepository extends JpaRepository<Indicator, String> {
 
-
-
     List<Indicator> findAll();
     Optional<Indicator> findById(Long centerID);
 
     @Query("SELECT COUNT(v.id) from Indicator v where v.istime = :valide")
     long countActivated(@Param("valide") Boolean valide);
-    
+
 	Optional<Indicator> findByCode(String code);
 
 }

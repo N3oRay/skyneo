@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * @Author Ahmed EL FAYAFI on avr., 2019
+ * @Author SLS --- on avr., 2019
  */
 
 @Entity

@@ -12,13 +12,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
- * @Author Ahmed EL FAYAFI on mars, 2019
+ * @Author SLS --- on mars, 2019
  */
 
 @Repository
 public interface AnimationRepository extends JpaRepository<Animation, String> {
-	
-	
+
+
     @EntityGraph(attributePaths = {"dashboard", "center"})
     List<Animation> findAll();
 
@@ -26,15 +26,5 @@ public interface AnimationRepository extends JpaRepository<Animation, String> {
     Optional<Animation> findById(Long animationID);
 
 	Optional<Animation> findByName(String name);
-	
-	/*
-	@Query("SELECT new com.sos.obs.decc.service.dto.AnimationDTO(e.id, d.name, e.name, e.message_s, e.message_d) "
-			+ "FROM Center d LEFT JOIN d.animations e")
-	List<AnimationDTO> fetchCentreAnimationDataLeftJoin();
-	@Query("SELECT com.sos.obs.decc.service.dto.AnimationDTO(e.id, d.name, e.name, e.message_s, e.message_d) "
-			+ "FROM Center d RIGHT JOIN d.animations e")
-	List<AnimationDTO> fetchCentreAnimationDataRightJoin();
-    */
-    
-    //Optional<Animation> findByIdSimple(Long animationID);
+
 }

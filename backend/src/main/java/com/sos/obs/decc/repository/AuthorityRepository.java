@@ -11,13 +11,11 @@ import com.sos.obs.decc.domain.Authority;
  * Spring Data JPA repository for the Authority entity.
  */
 public interface AuthorityRepository extends JpaRepository<Authority, String> {
-	
-	
-	
+
 	String AUTHO_CACHE = "authorityCache";
-	
+
 	@Cacheable(cacheNames = AUTHO_CACHE)
     List<Authority> findAll();
-	
-	
+
+
 }
