@@ -10,8 +10,9 @@ import java.util.Map;
 
 
 
-@ConfigurationProperties(prefix = "application", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "application", ignoreUnknownFields = true)
 public class ApplicationProperties {
+
 
     private final ApplicationProperties.Async async = new ApplicationProperties.Async();
     private final ApplicationProperties.Http http = new ApplicationProperties.Http();
@@ -25,11 +26,12 @@ public class ApplicationProperties {
     private final ApplicationProperties.Social social = new ApplicationProperties.Social();
     private final ApplicationProperties.Gateway gateway = new ApplicationProperties.Gateway();
     private final ApplicationProperties.Registry registry = new ApplicationProperties.Registry();
-    
+
     public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60; //2592000L;
 
     public ApplicationProperties() {
     }
+
 
     public ApplicationProperties.Async getAsync() {
         return this.async;
@@ -482,8 +484,8 @@ public class ApplicationProperties {
                     this.base64Secret = null;
                     this.tokenValidityInSeconds = 1800L;
                     this.tokenValidityInSecondsForRememberMe = JWT_TOKEN_VALIDITY;
-                    
-                    
+
+
                 }
 
                 public String getSecret() {
@@ -923,6 +925,7 @@ public class ApplicationProperties {
             }
         }
     }
+
 
     public static class Async {
         private int corePoolSize = 2;
