@@ -2,16 +2,32 @@ package com.sos.obs.decc.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.cors.CorsConfiguration;
-
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import javax.validation.constraints.NotNull;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 
+/*
+import org.springframework.validation.annotation.Validated;
+  @Pattern(regexp = "jdbc:.*", message = "Database JDBC URI must start with jdbc:")
+  private String uri;
+  @NotBlank(message = "login cannot be blank")
+  private String login;
+  @NotNull(message = "password is mandatory but can be left empty")
+*/
 
-@ConfigurationProperties(prefix = "application", ignoreUnknownFields = true)
+@Configuration
+@EnableConfigurationProperties
+@ConfigurationProperties(prefix = "application", ignoreUnknownFields = false)
 public class ApplicationProperties {
+
+
+    private String title = "";
+    private String version = "";
+    private String description = "";
 
 
     private final ApplicationProperties.Async async = new ApplicationProperties.Async();
@@ -28,6 +44,8 @@ public class ApplicationProperties {
     private final ApplicationProperties.Registry registry = new ApplicationProperties.Registry();
 
     public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60; //2592000L;
+
+
 
     public ApplicationProperties() {
     }
@@ -79,6 +97,31 @@ public class ApplicationProperties {
 
     public ApplicationProperties.Gateway getGateway() {
         return this.gateway;
+    }
+
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setTitle(String title) {
+         this.title = title;
+    }
+
+    public String getDescription() {
+         return this.description;
+    }
+
+    public void setDescription(String description) {
+         this.description = description;
+    }
+
+    public String getVersion() {
+         return this.version;
+    }
+
+    public void setVersion(String version) {
+         this.version = version;
     }
 
     public static class Registry {
@@ -565,7 +608,7 @@ public class ApplicationProperties {
         }
     }
 
-    public static class Mail {
+    public static class Mail { // OK
         private boolean enabled = false;
         private String from = "";
         private String baseUrl = "";
@@ -598,7 +641,7 @@ public class ApplicationProperties {
         }
     }
 
-    public static class Cache {
+    public static class Cache { //OK
         private final ApplicationProperties.Cache.Hazelcast hazelcast = new ApplicationProperties.Cache.Hazelcast();
         private final ApplicationProperties.Cache.Ehcache ehcache = new ApplicationProperties.Cache.Ehcache();
         private final ApplicationProperties.Cache.Infinispan infinispan = new ApplicationProperties.Cache.Infinispan();
@@ -785,7 +828,7 @@ public class ApplicationProperties {
             }
         }
 
-        public static class Ehcache {
+        public static class Ehcache { //OK
             private int timeToLiveSeconds = 3600;
             private long maxEntries = 100L;
 

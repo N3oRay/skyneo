@@ -29,9 +29,10 @@ COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 
 # ***************** Test local ***************************************
 # mkdir ~/Bureau/Backup/skyapp
-# cp dependency/BOOT-INF/lib ~/Bureau/Backup/skyapp/lib
-# cp dependency/META-INF/ ~/Bureau/Backup/skyapp/META-INF
-# cp dependency/BOOT-INF/classes ~/Bureau/Backup/skyapp/
+# mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
+# sudo cp -r target/dependency/BOOT-INF/lib /app
+# sudo cp -r target/dependency/META-INF /app
+# sudo cp -r target/dependency/BOOT-INF/classes /app
 # cp ~/Bureau/Backup/projet/skyneo/backend/target/api-admin-0.0.8-SNAPSHOT.jar ~/Bureau/Backup/skyapp/
 # java -Xms1536m -Xmx1536m -Dspring.profiles.active=dev -jar *.jar com.sos.obs.decc.DashboardAdminApp
 # *********** javac -verbose hello.java

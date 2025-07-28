@@ -1,114 +1,12 @@
 # ===================================================================
-# Spring Boot configuration for the "dev" profile.
-#
-# This configuration overrides the application.yml file.
-#
-# More information on profiles: https://www.jhipster.tech/profiles/
-# More information on configuration properties: https://www.jhipster.tech/common-application-properties/
-# ===================================================================
-
-# ===================================================================
-# Standard Spring Boot properties.
-# Full reference is available at:
-# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
-# ===================================================================
-
-logging:
-    level:
-        ROOT: DEBUG
-        io.github.jhipster: DEBUG
-        com.sos.obs.decc: DEBUG
-
-evita:
-    datasource:
-        type: com.zaxxer.hikari.HikariDataSource
-#        url: jdbc:sqlserver://10.170.16.26:1433;databaseName=ftm_awdb
-        url: jdbc:sqlserver://172.27.106.151:1433;databaseName=test
-        username: 'OABDEV'
-        password: '!OABDEV*'
-        hikari:
-            poolName: Hikari
-            auto-commit: false
-            data-source-properties:
-                cachePrepStmts: true
-                prepStmtCacheSize: 250
-                prepStmtCacheSqlLimit: 2048
-                useServerPrepStmts: true
-    jpa:
-        database-platform: org.hibernate.dialect.SQLServer2012Dialect
-        database: SQL_SERVER
-        show-sql: true
-        properties:
-            hibernate.id.new_generator_mappings: true
-            hibernate.connection.provider_disables_autocommit: true
-            hibernate.connection.autocommit: false
-            hibernate.cache.use_second_level_cache: false
-            hibernate.cache.use_query_cache: false
-            hibernate.generate_statistics: true
-spring:
-    profiles:
-        active: dev
-        include:
-            - swaggerEnableJpaRepositories
-            # Uncomment to activate TLS for the dev profile
-            #- tls
-    devtools:
-        restart:
-            enabled: true
-        livereload:
-            enabled: false # we use Webpack dev server + BrowserSync for livereload
-    jackson:
-        serialization:
-            indent-output: true
-    datasource:
-        type: com.zaxxer.hikari.HikariDataSource
-        # url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
-        url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
-        username: dashuser
-        password: dashuser
-
-        hikari:
-            poolName: Hikari
-            # auto-commit: false
-            data-source-properties:
-                cachePrepStmts: true
-                prepStmtCacheSize: 250
-                prepStmtCacheSqlLimit: 2048
-                useServerPrepStmts: true
-    jpa:
-        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-        database: MYSQL
-        show-sql: true
-        properties:
-            hibernate.id.new_generator_mappings: true
-            # hibernate.connection.provider_disables_autocommit: true
-            # hibernate.connection.autocommit: false
-            hibernate.cache.use_second_level_cache: false
-            hibernate.cache.use_query_cache: false
-            hibernate.generate_statistics: true
-    liquibase:
-        enabled: true
-        contexts: dev
-    mail:
-        host: localhost
-        port: 25
-        username:
-        password:
-    messages:
-        cache-duration: PT1S # 1 second, see the ISO 8601 standard
-    thymeleaf:
-        cache: false
-
-server:
-    port: 8080
-
-# ===================================================================
 # JHipster specific properties
 #
 # Full reference is available at: https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
 application:
+    title: "SOS_Projet"
+    version: "VERSION_1"
     http:
         version: V_1_1 # To use HTTP/2 you will need to activate TLS (see application-tls.yml)
     cache: # Cache configuration

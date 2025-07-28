@@ -12,6 +12,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.core.env.Environment;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.annotation.PostConstruct;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -19,7 +21,6 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @SpringBootApplication
-@EnableConfigurationProperties({ ApplicationProperties.class})
 @EntityScan("com.sos.obs.decc")
 public class DashboardAdminApp {
 
@@ -51,6 +52,10 @@ public class DashboardAdminApp {
         }
     }
 
+
+    @Autowired
+    private ApplicationProperties myConfig;
+
     /**
      * Main method, used to run the application.
      *
@@ -66,6 +71,9 @@ public class DashboardAdminApp {
         log.info("4 - Demarrage - main. logApplicationStartup.");
         //logger.info("Foo from System.getenv(): {}", System.getenv("bar"));
         logApplicationStartup(env);
+
+        //log.info("using environment mail: " + myConfig.getMail().getFrom());
+        //log.info("mail url: " + myConfig.getMail().getBaseUrl());
         log.info("5 - Demarrage - main. fin.");
     }
 

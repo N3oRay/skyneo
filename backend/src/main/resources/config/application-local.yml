@@ -19,32 +19,6 @@ logging:
         io.github.jhipster: DEBUG
         com.sos.obs.decc: DEBUG
 
-evita:
-    datasource:
-        type: com.zaxxer.hikari.HikariDataSource
-#        url: jdbc:sqlserver://10.170.16.26:1433;databaseName=ftm_awdb
-        url: jdbc:sqlserver://172.27.106.151:1433;databaseName=evita_awdb
-        username: 'OABDEV'
-        password: '!OABDEV*'
-        hikari:
-            poolName: Hikari
-            auto-commit: false
-            data-source-properties:
-                cachePrepStmts: true
-                prepStmtCacheSize: 250
-                prepStmtCacheSqlLimit: 2048
-                useServerPrepStmts: true
-    jpa:
-        database-platform: org.hibernate.dialect.SQLServer2012Dialect
-        database: SQL_SERVER
-        show-sql: true
-        properties:
-            hibernate.id.new_generator_mappings: true
-            hibernate.connection.provider_disables_autocommit: true
-            hibernate.connection.autocommit: false
-            hibernate.cache.use_second_level_cache: false
-            hibernate.cache.use_query_cache: false
-            hibernate.generate_statistics: true
 spring:
     profiles:
         active: dev
@@ -61,7 +35,7 @@ spring:
         serialization:
             indent-output: true
     datasource:
-        type: com.zaxxer.hikari.HikariDataSource
+        type: com.mysql.cj.jdbc.Driver
         # url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
         url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
         username: dashuser
