@@ -1,102 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/default.xml"/>
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 
-<configuration scan="true">
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
-
-<!-- The FILE and ASYNC appenders are here as examples for a production configuration -->
-
-    <property name="HOME_LOG" value="logs/app.log"/>
-    
-    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
              <pattern>%d %green([%thread]) %highlight(%level) %logger{50} - %msg%n</pattern>
         </layout>
     </appender>
-    
 
-
-    <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${HOME_LOG}</file>
-
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>logs/archived/app.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
-            <!-- each archived file, size max 10MB -->
-            <maxFileSize>2MB</maxFileSize>
-            <!-- total size of all archive files, if total size > 20GB, it will delete old archived file -->
-            <totalSizeCap>20MB</totalSizeCap>
-            <!-- 60 days to keep -->
-            <maxHistory>60</maxHistory>
-        </rollingPolicy>
-
-        <encoder>
-<!--             <pattern>%d %p %c{1.} [%t] %m%n</pattern> -->
-            <pattern>%d %green([%thread]) %highlight(%level) %logger{50} - %msg%n</pattern>
-        </encoder>
-    </appender>
-    
-    
-<!--     <if condition='property("logLevel").toUpperCase().contains("INFO")'> -->
-<!--             <then> -->
-<!--                 <root level="info"> -->
-<!--                     <appender-ref ref="FILE-ROLLING"/> -->
-<!--                 </root> -->
-<!--             </then> -->
-<!--         </if> -->
-<!-- 	<if condition='property("logLevel").toUpperCase().contains("DEBUG")'> -->
-<!--             <then> -->
-<!--                 <root level="debug"> -->
-<!--                     <appender-ref ref="Console"/> -->
-<!--         			<appender-ref ref="FILE-ROLLING"/> -->
-<!--                 </root> -->
-<!--             </then> -->
-<!--         </if> -->
-    
-    <root level="debug">
-        <appender-ref ref="Console"/>
-        <appender-ref ref="FILE-ROLLING"/>
-    </root>
-
-
-    <logger name="ch.qos.logback" level="INFO" additivity="false"/>
-    <logger name="com.ryantenney" level="INFO" additivity="false"/>
-    <logger name="com.sun" level="INFO" additivity="false"/>
-    <logger name="com.zaxxer" level="INFO" additivity="false"/>
-    <logger name="io.undertow" level="INFO" additivity="false"/>
-    <logger name="io.undertow.websockets.jsr" level="INFO" additivity="false"/>
-    <logger name="org.ehcache" level="INFO" additivity="false"/>
-    <logger name="org.apache" level="INFO" additivity="false"/>
-    <logger name="org.apache.catalina.startup.DigesterFactory" level="INFO" additivity="false"/>
-    <logger name="org.bson" level="INFO" additivity="false"/>
-    <logger name="org.thymeleaf" level="INFO" additivity="false"/>
-    <logger name="org.xnio" level="INFO" additivity="false"/>
-    <logger name="springfox" level="INFO" additivity="false"/>
-    <logger name="sun.rmi" level="INFO" additivity="false"/>
-    <logger name="sun.rmi.transport" level="INFO" additivity="false"/>
-    <logger name="com.sos" level="DEBUG" additivity="false"/>
-    <logger name="liquibase" level="DEBUG" additivity="false"/>
-    <logger name="javax" level="ERROR" additivity="false"/>
-    <logger name="org.hibernate" level="DEBUG" additivity="false"/>
-    <logger name="org.hibernate.ejb.HibernatePersistence" level="INFO" additivity="false"/>
-    <logger name="org.hibernate.internal.util.EntityPrinter" level="INFO" additivity="false"/>
-    <logger name="org.hibernate.engine.internal.Collections" level="INFO" additivity="false"/>
-    <logger name="org.hibernate.engine.internal.TwoPhaseLoad" level="INFO" additivity="false"/>
-    <logger name="org.hibernate.SQL" level="DEBUG" additivity="false"/> 
-    <logger name="org.hibernate.type" level="ALL" additivity="false"/> 
-    <logger name="org.zalando" level="ERROR" additivity="false"/> 
-    <logger name="org.springframework" level="INFO" additivity="false"/>
-    <logger name="com.sos.obs.decc.security.jwt" level="INFO" additivity="false"/>
-    <logger name="com.sos.obs.decc.aop.logging.LoggingAspect" level="INFO" additivity="false"/>
-    <logger name="LiquibaseSchemaResolver" level="INFO" additivity="false"/>
-    <logger name="com.sos.obs.decc" level="INFO"  additivity="false"/>
-    
-    <logger name="com.sos.obs.decc.DashboardAdminApp" level="INFO"/>
-
-    <!-- https://logback.qos.ch/manual/configuration.order#shutdownHook and https://jira.qos.ch/browse/LOGBACK-1090 -->
-    <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
-
-    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
-        <resetJUL>true</resetJUL>
-    </contextListener>
-
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+	</root>
+	<logger name="org.springframework.web" level="DEBUG"/>
 </configuration>

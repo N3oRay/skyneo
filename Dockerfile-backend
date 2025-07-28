@@ -1,10 +1,9 @@
 # Build backend (Spring Boot)
-FROM maven:3.9.6-eclipse-temurin-21-alpine as build-backend
+FROM maven:3.9.6-eclipse-temurin-21-alpine as build
 VOLUME ~/.m2
 WORKDIR /app
 COPY backend/pom.xml backend/
 COPY backend/src backend/src
-# COPY --from=build-frontend /app/frontend/dist/ ./backend/src/main/resources/static/
 WORKDIR /app/backend
 
 # Restore dependencies (utilise le cache Docker si pom.xml n'a pas changé)
@@ -17,23 +16,33 @@ RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 
 
-# Runtime
-
-FROM eclipse-temurin:21-jre-alpine
-WORKDIR /app
-
-COPY --from=build-backend /app/backend/target/*.jar app.jar
+#### Stage 2: A minimal docker image with command to run the app
+# FROM openjdk:8-jre-alpine
+FROM eclipse-temurin:24-noble
 
 ARG DEPENDENCY=/app/backend/target/dependency
+
 # Copy project dependencies from the build stage
-COPY --from=build-backend ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY --from=build-backend ${DEPENDENCY}/META-INF /app/META-INF
-COPY --from=build-backend ${DEPENDENCY}/BOOT-INF/classes /app
+COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 
+# ***************** Test local ***************************************
+# mkdir ~/Bureau/Backup/skyapp
+# cp dependency/BOOT-INF/lib ~/Bureau/Backup/skyapp/lib
+# cp dependency/META-INF/ ~/Bureau/Backup/skyapp/META-INF
+# cp dependency/BOOT-INF/classes ~/Bureau/Backup/skyapp/
+# cp ~/Bureau/Backup/projet/skyneo/backend/target/api-admin-0.0.8-SNAPSHOT.jar ~/Bureau/Backup/skyapp/
+# java -Xms1536m -Xmx1536m -Dspring.profiles.active=dev -jar *.jar com.sos.obs.decc.DashboardAdminApp
+# *********** javac -verbose hello.java
+# java -verbose -Xms256m -Xmx256m -Dspring.profiles.active=dev -jar *.jar com.sos.obs.decc.DashboardAdminApp
+# java -Xms1536m -Xmx1536m -Dspring.profiles.active=dev -cp app:app/lib/* com.sos.obs.decc.DashboardAdminApp
 
+# sudo chmod +r /app/logs/app.log
+RUN mkdir /app/logs/
+RUN chmod +r /app/logs/
 
-EXPOSE 8081
-
-# ENTRYPOINT ["java", "-jar", "app.jar"]
 # Run Application
-ENTRYPOINT ["java","-jar","app.jar","com.sos.obs.decc.DashboardAdminApp"]
+ENTRYPOINT ["java", "-Xms256m", "-Xmx256m", "-Dspring.profiles.active=${ENV_NAME},${ENV_VERSION_NAME}", "-cp", "app:app/lib/*","com.sos.obs.decc.DashboardAdminApp"]
+
+# ENTRYPOINT ["java", "-Xms1536m", "-Xmx1536m", "-XX:+UseConcMarkSweepGC", "-XX:CMSInitiatingOccupancyFraction=70", "-XX:+UseCMSInitiatingOccupancyOnly", "-verbose:gc", "-jar", "/app.jar"]
