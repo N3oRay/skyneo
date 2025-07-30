@@ -37,7 +37,8 @@ spring:
     datasource:
         type: com.mysql.cj.jdbc.Driver
         # url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
-        url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
+        # url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
+        url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
         username: dashuser
         password: dashuser
 
@@ -83,6 +84,8 @@ server:
 # ===================================================================
 
 application:
+    title: "SOS_Projet"
+    version: "VERSION_1"
     http:
         version: V_1_1 # To use HTTP/2 you will need to activate TLS (see application-tls.yml)
     cache: # Cache configuration

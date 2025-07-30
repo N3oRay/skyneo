@@ -102,4 +102,6 @@ GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON DashboardAdmin.* TO 'dashuser'@'
 GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON *.* TO 'dashuser'@'%';
 GRANT ALL ON DashboardAdmin.* TO 'dashuser'@'%' WITH GRANT OPTION;
 -- GRANT ALL ON DashboardAdmin.* TO 'dashuser'@'localhost' WITH GRANT OPTION;
+-- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'R00t+';
+-- ALTER USER 'dashuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'dashuser';
 FLUSH PRIVILEGES;

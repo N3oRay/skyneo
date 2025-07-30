@@ -1,6 +1,7 @@
 services:
-  mysql:
-      image: mysql:8.2
+  mysqldb:
+      image: mysql:8.0
+      container_name: mysqldb
       volumes:
         - ./mysql-init:/docker-entrypoint-initdb.d
       ports:
@@ -9,6 +10,8 @@ services:
         MYSQL_ROOT_PASSWORD: R00t+
         MYSQL_USER: dashuser
         MYSQL_PASSWORD: dashuser
+        REQUIRE_SECURE_TRANSPORT: 0
+        USESSL: 0
       healthcheck:
         test: "/usr/bin/mysql --user=root --password=R00t+ --execute \"SHOW DATABASES;\""
         interval: 5s
@@ -19,7 +22,7 @@ services:
       context: .
       dockerfile: Dockerfile-backend
     depends_on:
-      mysql:
+      mysqldb:
         condition: service_healthy
     ports:
       - "8081:8081" # Forward the exposed port 8081 on the container to port 8081 on the host machine
@@ -27,7 +30,7 @@ services:
     volumes:
       - "${HOME}/.m2:/root/.m2"
     links:
-       - "mysql:mysql"
+       - "mysqldb:mysqldb"
     environment: # Pass environment variables to the service
       #SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/polls?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
       #DEBUG: true
@@ -35,9 +38,12 @@ services:
       ENV_VERSION_NAME: dev
       SPRING_DATASOURCE_USERNAME: dashuser
       SPRING_DATASOURCE_PASSWORD: dashuser
+
       #?useUnicode=true&characterEncoding=utf8&useSSL=false
       #    SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&relaxAutoCommit=true
+      #SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/DashboardAdmin?#useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&relaxAutoCommit=true
+
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC
       #SPRING_PROFILES_ACTIVE: dev,swagger
       SPRING_DATASOURCE_TYPE: com.zaxxer.hikari.HikariDataSource
   web:
@@ -45,7 +51,7 @@ services:
       context: .
       dockerfile: Dockerfile-front
     depends_on:
-      mysql:
+      mysqldb:
         condition: service_started
     restart: unless-stopped
     ports:
