@@ -60,6 +60,8 @@ management:
                 auto-time-requests: true
 
 spring:
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
     application:
         name: DashboardAdmin
     profiles:

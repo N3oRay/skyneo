@@ -11,7 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.core.env.Environment;
-
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration;
+import org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration;
+import org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration;
+//org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
@@ -20,7 +24,9 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
 
-@SpringBootApplication
+//@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
+//@SpringBootApplication
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class,DataSourcePoolMetricsAutoConfiguration.class,LiquibaseAutoConfiguration.class,JdbcRepositoriesAutoConfiguration.class})
 @EntityScan("com.sos.obs.decc")
 public class DashboardAdminApp {
 

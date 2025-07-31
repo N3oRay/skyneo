@@ -52,7 +52,7 @@ spring:
                 prepStmtCacheSqlLimit: 2048
                 useServerPrepStmts: true
     jpa:
-        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        database-platform: org.hibernate.dialect.MySQL8Dialect
         database: MYSQL
         show-sql: true
         properties:
@@ -65,11 +65,6 @@ spring:
     liquibase:
         enabled: false
         contexts: dev
-        datasource:
-            type: com.mysql.cj.jdbc.Driver
-            url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-            username: dashuser
-            password: dashuser
     mail:
         host: localhost
         port: 25

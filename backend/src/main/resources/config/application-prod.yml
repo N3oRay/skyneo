@@ -49,6 +49,7 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
     liquibase:
+        enabled: false
         contexts: prod
     mail:
         host: localhost
