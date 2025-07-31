@@ -28,7 +28,8 @@ services:
       - "8081:8081" # Forward the exposed port 8081 on the container to port 8081 on the host machine
       # - "5000:5000" # Forward the exposed port 5000 on the container to port 5000 on the host machine
     volumes:
-      - "${HOME}/.m2:/root/.m2"
+      - ${HOME}/.m2:/root/.m2
+      #- ${USERPROFILE}/.m2:/root/.m2
     links:
        - "mysqldb:mysqldb"
     environment: # Pass environment variables to the service
@@ -57,4 +58,4 @@ services:
     ports:
       - "80:80" # Forward the exposed port 80 on the container to port 80 on the host machine
     volumes:
-      - "${HOME}/.m2:/root/.m2"
+      - ${HOME}/.m2:/root/.m2
