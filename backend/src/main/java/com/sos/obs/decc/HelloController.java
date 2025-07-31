@@ -11,4 +11,15 @@ public class HelloController {
 		return "Greetings from Spring Boot!";
 	}
 
+    @GetMapping("/api/")
+    public String helloapi() {
+        return "Notice API:";
+    }
+
+
+    @GetMapping("/api/hello")
+    public String hello() {
+        return "Dovahkiin says: Hello, World!";
+    }
+
 }

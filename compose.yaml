@@ -1,6 +1,6 @@
 services:
   mysqldb:
-      image: mysql:8.0
+      image: mysql:8.2
       container_name: mysqldb
       volumes:
         - ./mysql-init:/docker-entrypoint-initdb.d

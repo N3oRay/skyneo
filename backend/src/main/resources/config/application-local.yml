@@ -38,7 +38,6 @@ spring:
         type: com.mysql.cj.jdbc.Driver
         # url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
         # url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
-        # url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC&relaxAutoCommit=true
         url: jdbc:mysql://localhost:3306/DashboardAdmin?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC
         username: dashuser
         password: dashuser
@@ -63,7 +62,7 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
     liquibase:
-        enabled: false
+        enabled: true
         contexts: dev
     mail:
         host: localhost

@@ -5,11 +5,11 @@
 
 	<groupId>com.sos.animation</groupId>
 	<artifactId>api-admin</artifactId>
-	<version>0.0.8-SNAPSHOT</version>
+	<version>0.0.9-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Dashboard Admin</name>
-	<description>Dashboard Admin App built with Spring Boot, Spring Security, MySQL and JWT</description>
+	<description>SOS Admin App built with Spring Boot, Spring Security, MySQL 8 and JWT</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -77,12 +77,6 @@
     <scope>runtime</scope>
 </dependency>
 
-
-<dependency>
-    <groupId>com.mysql</groupId>
-    <artifactId>mysql-connector-j</artifactId>
-    <version>8.0.33</version>
-</dependency>
 -->
 <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 <dependency>
@@ -92,13 +86,20 @@
 </dependency>
 
 
-		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
+		<!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
 <dependency>
     <groupId>org.mariadb.jdbc</groupId>
     <artifactId>mariadb-java-client</artifactId>
-<!--     <version>2.5.4</version> -->
 </dependency>
+-->
 
+        <!--        MSQLSERVER
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.10.1.jre8</version>
+        </dependency>
+-->
 	  <dependency>
            <groupId>org.liquibase</groupId>
            <artifactId>liquibase-core</artifactId>
@@ -171,13 +172,7 @@
 	</dependency>
 
 
-        <!--        MSQLSERVER
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>12.10.1.jre8</version>
-        </dependency>
--->
+
 	<dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt-api</artifactId>
