@@ -1,10 +1,10 @@
 
 
-** Build with docker compose:
+#** Build with docker compose:
 
 sudo docker-compose up
 
-** test BDD MYSQL
+#** test BDD MYSQL
 
 sudo docker exec -it skyneo_mysql_1 bash
 $ mysql -u root -p
@@ -13,7 +13,7 @@ or
 
 $ mysql -u dashuser -p
 
-** sample MySQL
+#** sample MySQL
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -43,47 +43,48 @@ SHOW FULL TABLES FROM mydb;
 
 SHOW FULL TABLES FROM DashboardAdmin;
 
-*** For build on ligne:
+#*** For build on ligne:
 
 sudo docker build -t skyrim-hello . && sudo docker run -p 8080:8080 skyrim-hello
 
-*** or
-*** For build local offline:
+#*** or
+#*** For build local offline:
 
 export DOCKER_BUILDKIT=1
 
 sudo docker build -t skyrim-hello . && sudo docker run -v ~/.m2:/root/.m2 -p 8080:8080 skyrim-hello
 
-*** run simple ***
+#*** run simple ***
 sudo docker run -p 8080:8080 skyrim-hello
 
-*** Notice Docker commande ********************************************************
+#*** Notice Docker commande ********************************************************
 
 sudo docker exec CONTAINER_ID pwd
 
 Lorsqu'on supprime un conteneur penser à utiliser l'option -v qui permet de supprimer les volumes associés à un conteneur.
 
-Pour supprimer tous les conteneurs qui ne tournent pas on peut utiliser la commande suivante:
+#Pour supprimer tous les conteneurs qui ne tournent pas on peut utiliser la commande suivante:
 
 docker rm -v $(docker ps -aqf status=exited)
 
-Recréé un conteneur est assez rapide du moment que son image est disponible. Ce qui nous amène vers le nettoyage des images inutiles.
-Supprimer les images inutiles
-
-J'appelle image "inutile" une image "intermédiaire" qui sert dans la construction d'une image "finale" et qui n'est donc jamais utilisé pour créer un conteneur.
-
-On peut supprimer ces images avec la commande suivante:
+#Recréé un conteneur est assez rapide du moment que son image est disponible. Ce qui nous amène vers le nettoyage des images inutiles.
+#Supprimer les images inutiles
+#J'appelle image "inutile" une image "intermédiaire" qui sert dans la construction d'une image "finale" et qui n'est donc jamais utilisé pour créer un conteneur.
+#On peut supprimer ces images avec la commande suivante:
 
 docker rmi $(docker images -qf dangling=true)
 
-Souvent indispensable après un docker pull.
-Supprimer les volumes orphelins
+#ou
 
-Un volume orphelin est un volume pour lequel son conteneur associé a été supprimé sans l'option -v. Pour supprimer ces volumes on a la commande suivante:
+sudo docker rmi $(sudo docker images -qf dangling=true)
+
+#Souvent indispensable après un docker pull.
+#Supprimer les volumes orphelins
+#Un volume orphelin est un volume pour lequel son conteneur associé a été supprimé sans l'option -v. Pour supprimer ces volumes on a la commande suivante:
 
 docker volume rm $(docker volume ls -qf dangling=true)
 
-*** Notice Git *********************************************************************
+#*** Notice Git *********************************************************************
 
 echo "# skyneo" >> README.md
 
@@ -98,3 +99,31 @@ git branch -M main
 git remote add origin https://github.com/N3oRay/skyneo.git
 
 git push -u origin main
+
+#************* Notice API ***************************
+
+http://127.0.0.1:8080/api/admin
+http://127.0.0.1:8080/api/admin/animation
+http://127.0.0.1:8080/management/audits      GET param : fromDate, toDate
+http://127.0.0.1:8080/management/audits      GET  /audits/:id
+http://127.0.0.1:8080/api/admin/authority
+http://127.0.0.1:8080/api/admin/center    /delete/{centerId}                    /add
+http://127.0.0.1:8080/api/admin/dashboard             /delete/{dashboardId}
+http://127.0.0.1:8080/api/admin/flashInfo
+http://127.0.0.1:8080/api/admin/indicator
+http://127.0.0.1:8080/api/admin/link
+http://127.0.0.1:8080/management
+http://127.0.0.1:8080/api/admin/relationship
+http://127.0.0.1:8080/api/admin/screen
+http://127.0.0.1:8080/api/admin/scrollingMessage
+http://127.0.0.1:8080/api/admin/skillGroup
+http://127.0.0.1:8080/api/admin/sprite
+http://127.0.0.1:8080/api/admin
+
+
+POST
+/authenticate
+
+/api/admin
+
+/api/admin/users

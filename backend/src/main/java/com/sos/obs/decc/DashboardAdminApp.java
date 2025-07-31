@@ -15,7 +15,6 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration;
 import org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration;
-//org/springframework/boot/autoconfigure/data/jdbc/JdbcRepositoriesAutoConfiguration
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
@@ -24,8 +23,7 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
 
-//@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
-//@SpringBootApplication
+
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,DataSourcePoolMetricsAutoConfiguration.class,LiquibaseAutoConfiguration.class,JdbcRepositoriesAutoConfiguration.class})
 @EntityScan("com.sos.obs.decc")
 public class DashboardAdminApp {
@@ -77,9 +75,6 @@ public class DashboardAdminApp {
         log.info("4 - Demarrage - main. logApplicationStartup.");
         //logger.info("Foo from System.getenv(): {}", System.getenv("bar"));
         logApplicationStartup(env);
-
-        //log.info("using environment mail: " + myConfig.getMail().getFrom());
-        //log.info("mail url: " + myConfig.getMail().getBaseUrl());
         log.info("5 - Demarrage - main. fin.");
     }
 
