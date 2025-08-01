@@ -3,8 +3,99 @@
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
-    
-       <changeSet author="s.lopes" id="00000000000002" context="test">
+
+       <changeSet author="s.lopes" id="00000000000034" context="test">
+
+        <createTable tableName="alimentation">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_alim_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+        <createTable tableName="laptop">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_laptop_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+        <createTable tableName="phone">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_phone_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+        <createTable tableName="routeur">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_routeur_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+
+        <createTable tableName="serveur">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_serveur_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+        <createTable tableName="pc">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_pc_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
 
       </changeSet>
 </databaseChangeLog>

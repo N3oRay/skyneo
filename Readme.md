@@ -3,10 +3,14 @@
 #** Build with docker compose:
 
 sudo docker-compose up
+# ** Verification des dockers en cours d'execution
+
+sudo docker ps -s
+
 
 #** test BDD MYSQL
 
-sudo docker exec -it skyneo_mysql_1 bash
+sudo docker exec -it mysqldb bash
 $ mysql -u root -p
 
 or

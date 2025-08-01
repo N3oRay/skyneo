@@ -38,13 +38,15 @@
             <column name="last_modified_by" type="varchar(50)"/>
             <column name="last_modified_date" type="timestamp"/>
         </createTable>
-
+    </changeSet>
+    <changeSet id="00000000000002" author="slopes">
         <createTable tableName="authority">
             <column name="name" type="varchar(50)">
                 <constraints primaryKey="true" nullable="false" uniqueConstraintName="ux_authority_name"/>
             </column>
         </createTable>
-
+    </changeSet>
+    <changeSet id="00000000000003" author="slopes">
         <createTable tableName="rel_user_authority">
             <column name="user_id" type="bigint">
                 <constraints nullable="false"/>
@@ -71,6 +73,8 @@
         <addNotNullConstraint   columnName="password_hash"
                                 columnDataType="varchar(60)"
                                 tableName="user"/>
+    </changeSet>
+    <changeSet id="00000000000004" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/users.csv"
                   separator=";"
@@ -88,7 +92,8 @@
                   file="config/liquibase/users_authorities.csv"
                   separator=";"
                   tableName="rel_user_authority"/>
-
+    </changeSet>
+    <changeSet id="00000000000005" author="slopes">
         <createTable tableName="persistent_audit_event">
             <column name="event_id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -99,7 +104,8 @@
             <column name="event_date" type="timestamp"/>
             <column name="event_type" type="varchar(255)"/>
         </createTable>
-
+    </changeSet>
+    <changeSet id="00000000000006" author="slopes">
         <createTable tableName="persistent_audit_evt_data">
             <column name="event_id" type="bigint">
                 <constraints nullable="false"/>
@@ -129,8 +135,9 @@
                                  constraintName="fk_evt_pers_audit_evt_data"
                                  referencedColumnNames="event_id"
                                  referencedTableName="persistent_audit_event"/>
-                                 
-                                 
+
+    </changeSet>
+    <changeSet id="00000000000007" author="slopes">
         <createTable tableName="date_time_wrapper">
             <column autoIncrement="${autoIncrement}" name="id" type="BIGINT">
                 <constraints primaryKey="true" primaryKeyName="date_time_wrapperPK"/>
@@ -143,8 +150,8 @@
             <column name="offset_time" type="time"/>
             <column name="local_date" type="date"/>
         </createTable>
-
-
+    </changeSet>
+    <changeSet id="00000000000008" author="slopes">
         <createTable tableName="center">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -157,15 +164,16 @@
                 <constraints nullable="false" />
             </column>
         </createTable>
-        
+    </changeSet>
+    <changeSet id="00000000000009" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/center.csv"
                   separator=";"
                   tableName="center">
             <column name="active" type="boolean"/>
         </loadData>
-        
-        
+    </changeSet>
+    <changeSet id="00000000000010" author="slopes">
         <createTable tableName="site">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -178,15 +186,16 @@
                 <constraints nullable="false" />
             </column>
         </createTable>
-        
+    </changeSet>
+    <changeSet id="00000000000011" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/site.csv"
                   separator=";"
                   tableName="site">
             <column name="active" type="boolean"/>
         </loadData>
-        
-        
+    </changeSet>
+    <changeSet id="00000000000012" author="slopes">
         <createTable tableName="rel_site_center">
             <column name="site_id" type="bigint">
                 <constraints nullable="false"/>
@@ -195,13 +204,14 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-        
+     </changeSet>
+    <changeSet id="00000000000013" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/rel_site_center.csv"
                   separator=";"
                   tableName="rel_site_center"/>
-
-        
+    </changeSet>
+    <changeSet id="00000000000014" author="slopes">
 
         <createTable tableName="activites">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
@@ -217,13 +227,15 @@
                 <constraints nullable="true"/>
             </column>
         </createTable>
-        
+    </changeSet>
+    <changeSet id="00000000000015" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/activites.csv"
                   separator=";"
                   tableName="activites"/>
-                  
-                  
+
+    </changeSet>
+    <changeSet id="00000000000016" author="slopes">
         <createTable tableName="multi_activites">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -231,12 +243,14 @@
             <column name="activite_id" type="bigint"/>
             <column name="name" type="varchar(100)"/>
         </createTable>
-        
+    </changeSet>
+    <changeSet id="00000000000017" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/multi_activites.csv"
                   separator=";"
                   tableName="multi_activites"/>
-
+    </changeSet>
+    <changeSet id="00000000000018" author="slopes">
         <createTable tableName="rel_user_center">
             <column name="user_id" type="bigint">
                 <constraints nullable="false"/>
@@ -245,27 +259,29 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-        
-        
+
+
                            <addForeignKeyConstraint baseColumnNames="center_id"
                                  baseTableName="rel_user_center"
                                  constraintName="fk_rel_user_center_id"
                                  referencedColumnNames="id"
                                  referencedTableName="center"/>
-                                 
+
                            <addForeignKeyConstraint baseColumnNames="user_id"
                                  baseTableName="rel_user_center"
                                  constraintName="fk_rel_user_center_user_id"
                                  referencedColumnNames="id"
                                  referencedTableName="user"/>
-        
+    </changeSet>
+    <changeSet id="00000000000018" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/rel_user_center.csv"
                   separator=";"
                   tableName="rel_user_center"/>
 
-        
-        
+    </changeSet>
+    <changeSet id="00000000000018" author="slopes">
+
         <createTable tableName="dashboard">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -277,18 +293,20 @@
                 <constraints unique="true" nullable="false" uniqueConstraintName="ux_dashboard_name"/>
             </column>
         </createTable>
-        
+
         <addForeignKeyConstraint baseColumnNames="center_id"
                                  baseTableName="dashboard"
                                  constraintName="fk_dashboard_center_id"
                                  referencedColumnNames="id"
                                  referencedTableName="center"/>
-        
+    </changeSet>
+    <changeSet id="00000000000019" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/dashboard.csv"
                   separator=";"
                   tableName="dashboard"/>
-                  
+    </changeSet>
+    <changeSet id="00000000000020" author="slopes">
         <createTable tableName="ecran">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -301,21 +319,23 @@
             <column name="ordre" type="varchar(100)"/>
             <column name="temps" type="varchar(100)"/>
         </createTable>
-        
-        
+
+
                 <addForeignKeyConstraint baseColumnNames="dashboard_id"
                                  baseTableName="ecran"
                                  constraintName="fk_dashboard_id"
                                  referencedColumnNames="id"
                                  referencedTableName="dashboard"/>
-        
+    </changeSet>
+    <changeSet id="00000000000021" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/ecran.csv"
                   separator=";"
                   tableName="ecran"/>
-                  
-                  
-                  
+
+    </changeSet>
+    <changeSet id="00000000000022" author="slopes">
+
         <createTable tableName="ref_ecran_activite">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -334,26 +354,28 @@
                 <constraints nullable="true"/>
             </column>
         </createTable>
-        
+
         <addForeignKeyConstraint baseColumnNames="activite_id"
                                  baseTableName="ref_ecran_activite"
                                  constraintName="fk_ecran_activite_id"
                                  referencedColumnNames="id"
                                  referencedTableName="activites"/>
-                                 
-                                 
+
+
                <addForeignKeyConstraint baseColumnNames="ecran_id"
                                  baseTableName="ref_ecran_activite"
                                  constraintName="fk_ecran_ref_id"
                                  referencedColumnNames="id"
                                  referencedTableName="ecran"/>
-        
+    </changeSet>
+    <changeSet id="00000000000023" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/ref_ecran_activite.csv"
                   separator=";"
                   tableName="ref_ecran_activite"/>
-                  
-                  
+    </changeSet>
+    <changeSet id="00000000000024" author="slopes">
+
         <createTable tableName="ref_activite_indic">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -368,18 +390,21 @@
             <column name="ordre" type="varchar(100)"/>
             <column name="temps" type="varchar(100)"/>
         </createTable>
-        
+    </changeSet>
+    <changeSet id="00000000000025" author="slopes">
                         <addForeignKeyConstraint baseColumnNames="activite_id"
                                  baseTableName="ref_activite_indic"
                                  constraintName="fk_ecran_id"
                                  referencedColumnNames="id"
                                  referencedTableName="activites"/>
-        
+    </changeSet>
+    <changeSet id="00000000000026" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/ref_activite_indic.csv"
                   separator=";"
                   tableName="ref_activite_indic"/>
-
+    </changeSet>
+    <changeSet id="00000000000027" author="slopes">
         <createTable tableName="animation">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -400,19 +425,21 @@
                 <constraints nullable="true"/>
             </column>
         </createTable>
-        
+
                    <addForeignKeyConstraint baseColumnNames="center_id"
                                  baseTableName="animation"
                                  constraintName="fk_animation_center_id"
                                  referencedColumnNames="id"
                                  referencedTableName="center"/>
-        
-        
+    </changeSet>
+    <changeSet id="00000000000028" author="slopes">
+
         <loadData encoding="UTF-8"
                   file="config/liquibase/animation.csv"
                   separator=";"
                   tableName="animation"/>
-        
+    </changeSet>
+    <changeSet id="00000000000029" author="slopes">
         <createTable tableName="FLASH_INFO">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -422,7 +449,8 @@
             <column name="name" type="varchar(64)"/>
             <column name="OBJECT" type="varchar(100)"/>
         </createTable>
-
+    </changeSet>
+    <changeSet id="00000000000030" author="slopes">
         <createTable tableName="ref_indicator">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -446,16 +474,18 @@
                 <constraints nullable="true" />
             </column>
         </createTable>
-        
 
+    </changeSet>
+    <changeSet id="00000000000031" author="slopes">
         <loadData encoding="UTF-8"
                   file="config/liquibase/rel_indicator.csv"
                   separator=";"
                   tableName="ref_indicator">
             <column name="is_Time" type="boolean"/>
         </loadData>
-        
-        
+
+    </changeSet>
+    <changeSet id="00000000000032" author="slopes">
         <createTable tableName="screen">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -473,7 +503,8 @@
             <column name="default_time" type="bigint"/>
             <column name="dashboard_id" type="bigint"/>
         </createTable>
-        
+    </changeSet>
+    <changeSet id="00000000000033" author="slopes">
             <loadData encoding="UTF-8"
                   file="config/liquibase/screen.csv"
                   separator=";"
