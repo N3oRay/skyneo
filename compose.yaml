@@ -10,6 +10,7 @@ services:
         MYSQL_ROOT_PASSWORD: R00t+
         MYSQL_USER: dashuser
         MYSQL_PASSWORD: dashuser
+        MYSQL_DATABASE: DashboardAdmin
         REQUIRE_SECURE_TRANSPORT: 0
         USESSL: 0
       healthcheck:

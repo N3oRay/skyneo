@@ -98,10 +98,25 @@ CREATE DATABASE IF NOT EXISTS DashboardAdmin;
 USE DashboardAdmin;
 
 -- CREATE USER 'dashuser'@'%' IDENTIFIED BY 'dashuser';
-GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON DashboardAdmin.* TO 'dashuser'@'%';
-GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON *.* TO 'dashuser'@'%';
-GRANT ALL ON DashboardAdmin.* TO 'dashuser'@'%' WITH GRANT OPTION;
+-- GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON DashboardAdmin.* TO 'dashuser'@'%';
+-- GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON *.* TO 'dashuser'@'%';
+-- GRANT ALL ON DashboardAdmin.* TO 'dashuser'@'%' WITH GRANT OPTION;
 -- GRANT ALL ON DashboardAdmin.* TO 'dashuser'@'localhost' WITH GRANT OPTION;
 -- ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'R00t+';
 -- ALTER USER 'dashuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'dashuser';
+
+
+-- CREATE USER 'dashuser'@'%' IDENTIFIED BY 'dashuser';
+-- GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON DashboardAdmin.* TO 'dashuser'@'%';
+-- GRANT CREATE, INSERT, UPDATE, SELECT, DELETE ON *.* TO 'dashuser'@'%';
+-- GRANT ALL PRIVILEGES ON *.* TO 'dashuser'@'%' IDENTIFIED BY 'dashuser';
+
+-- GRANT PRIVILEGES ON database.table TO 'username'@'host';
+
+GRANT ALL
+  ON *.*
+  TO 'dashuser'@'%'
+  WITH GRANT OPTION;
+
+
 FLUSH PRIVILEGES;
