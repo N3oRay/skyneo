@@ -517,4 +517,101 @@
         </loadData>
 
       </changeSet>
+
+ <changeSet author="s.lopes" id="00000000000036">
+
+        <createTable tableName="sos_alimentation">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_alim_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+        <createTable tableName="sos_laptop">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_laptop_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+        <createTable tableName="sos_phone">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_phone_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+        <createTable tableName="sos_routeur">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_routeur_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+
+        <createTable tableName="sos_serveur">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_serveur_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+        <createTable tableName="sos_pc">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)">
+                <constraints unique="true" nullable="false" uniqueConstraintName="ux_pc_name"/>
+            </column>
+            <column name="level" type="int"/>
+            <column name="description" type="varchar(200)"/>
+            <column name="type" type="varchar(45)"/>
+            <column name="classe" type="varchar(45)"/>
+            <column name="eco" type="varchar(45)"/>
+            <column name="consum" type="varchar(45)"/>
+        </createTable>
+
+      </changeSet>
+
+
 </databaseChangeLog>

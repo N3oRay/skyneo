@@ -71,17 +71,16 @@ public class DashboardAdminApp {
         SpringApplication app = new SpringApplication(DashboardAdminApp.class);
         log.info("2 - Demarrage - main. SpringApplication");
         DefaultProfileUtil.addDefaultProfile(app);
-        log.info("3 - Demarrage - main. add Profile.");
+        log.info("3 - Demarrage - main. log");
         logApplicationStartup();
-        log.info("4 - Demarrage - main. logApplicationStartup.");
-        //logger.info("Foo from System.getenv(): {}", System.getenv("bar"));
+        log.info("4 - Demarrage - main. run.");
         Environment env = app.run(args).getEnvironment();
-        log.info("5 - Demarrage - main. fin.");
+
     }
 
 
     private static void logApplicationStartup() {
-        log.info("4 - 1 Demarrage - logApplicationStartup.'");
+        System.out.println("4 - 1 Demarrage - logApplicationStartup.'");
         String hostAddress = "localhost";
         try {
             hostAddress = InetAddress.getLocalHost().getHostAddress();
@@ -120,6 +119,9 @@ public class DashboardAdminApp {
 			for (String beanName : beanNames) {
 				System.out.println(beanName);
 			}
+
+
+            System.out.println("Demarrage - OK.************************************************************");
 
 		};
 	}
