@@ -13,5 +13,10 @@
 		<appender-ref ref="CONSOLE" />
 	</root>
 
+    <logger name="com.sos" level="DEBUG" additivity="false"/>
+    <logger name="liquibase" level="DEBUG" additivity="false"/>
+    <logger name="org.ehcache" level="DEBUG" additivity="false"/>
+    <logger name="LiquibaseSchemaResolver" level="INFO" additivity="false"/>
+
 
 </configuration>

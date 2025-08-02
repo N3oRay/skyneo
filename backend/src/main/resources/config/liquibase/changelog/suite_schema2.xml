@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
-      <changeSet author="s.lopes" id="00000000000035" context="test">
+      <changeSet author="s.lopes" id="00000000000037" context="test">
         <insert tableName="rel_user_center">
             <column name="user_id" valueNumeric="1"/>
             <column name="center_id" value="1"/>

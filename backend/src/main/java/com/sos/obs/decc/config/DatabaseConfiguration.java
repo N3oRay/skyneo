@@ -52,13 +52,13 @@ public class DatabaseConfiguration {
     public DataSource customDataSource() {
        return DataSourceBuilder.create().build();
      }
-
+/*
     @Bean(name = "liquibase")
     @ConfigurationProperties("spring.datasource")
     public DataSource liquibaseDataSource() {
        return DataSourceBuilder.create().build();
      }
-
+*/
 
 
     @Bean

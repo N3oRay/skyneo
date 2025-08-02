@@ -1,5 +1,6 @@
-package com.sos.obs.decc.config;
 /*
+package com.sos.obs.decc.config;
+
 import liquibase.integration.spring.SpringLiquibase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

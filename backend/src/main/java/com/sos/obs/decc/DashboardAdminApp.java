@@ -1,5 +1,6 @@
 package com.sos.obs.decc;
 
+import org.springframework.boot.CommandLineRunner;
 import com.sos.obs.decc.config.ApplicationProperties;
 import com.sos.obs.decc.config.Constants;
 import com.sos.obs.decc.config.DefaultProfileUtil;
@@ -12,7 +13,6 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.core.env.Environment;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration;
 import org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +23,10 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class,DataSourcePoolMetricsAutoConfiguration.class,LiquibaseAutoConfiguration.class,JdbcRepositoriesAutoConfiguration.class})
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class,DataSourcePoolMetricsAutoConfiguration.class,JdbcRepositoriesAutoConfiguration.class})
 @EntityScan("com.sos.obs.decc")
 public class DashboardAdminApp {
 
@@ -57,8 +59,7 @@ public class DashboardAdminApp {
     }
 
 
-    @Autowired
-    private ApplicationProperties myConfig;
+
 
     /**
      * Main method, used to run the application.
@@ -71,44 +72,32 @@ public class DashboardAdminApp {
         log.info("2 - Demarrage - main. SpringApplication");
         DefaultProfileUtil.addDefaultProfile(app);
         log.info("3 - Demarrage - main. add Profile.");
-        Environment env = app.run(args).getEnvironment();
+        logApplicationStartup();
         log.info("4 - Demarrage - main. logApplicationStartup.");
         //logger.info("Foo from System.getenv(): {}", System.getenv("bar"));
-        logApplicationStartup(env);
+        Environment env = app.run(args).getEnvironment();
         log.info("5 - Demarrage - main. fin.");
     }
 
-    private static void logApplicationStartup(Environment env) {
+
+    private static void logApplicationStartup() {
         log.info("4 - 1 Demarrage - logApplicationStartup.'");
-        String protocol = "http";
-        if (env.getProperty("server.ssl.key-store") != null) {
-            log.info("Demarrage de l'application en https : key-store valid.'");
-            protocol = "https";
-        }else{
-            log.info("Demarrage de l'application en http uniquement: key-store invalid.'");
-        }
-        log.info("4 - 2 Demarrage - serverPort.'");
-        String serverPort = "8080";
-        if (env.getProperty("server.port") != null) {
-            serverPort = env.getProperty("server.port");
-        }
-        log.info("4 - 3 Demarrage - serverPort.'");
-        String contextPath = env.getProperty("server.servlet.context-path");
-        if (StringUtils.isBlank(contextPath)) {
-            contextPath = "/";
-        }
         String hostAddress = "localhost";
         try {
             hostAddress = InetAddress.getLocalHost().getHostAddress();
         } catch (UnknownHostException e) {
             log.warn("The host name could not be determined, using `localhost` as fallback");
         }
+        /*
+        log.info("Java Home:   {}".javaHome);
+        log.info("Home:   {}".homeDir);
+        log.info("DB URL = " + dbURL);
         log.info("\n----------------------------------------------------------\n\t" +
                 "Application '{}' is running! Access URLs:\n\t" +
                 "Local: \t\t{}://localhost:{}{}\n\t" +
                 "External: \t{}://{}:{}{}\n\t" +
                 "Profile(s): \t{}\n----------------------------------------------------------",
-            env.getProperty("spring.application.name"),
+            settingname,
             protocol,
             serverPort,
             contextPath,
@@ -117,5 +106,21 @@ public class DashboardAdminApp {
             serverPort,
             contextPath,
             env.getActiveProfiles());
+*/
     }
+
+    @Bean
+	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+		return args -> {
+
+			System.out.println("Let's inspect the beans provided by Spring Boot:");
+
+			String[] beanNames = ctx.getBeanDefinitionNames();
+			Arrays.sort(beanNames);
+			for (String beanName : beanNames) {
+				System.out.println(beanName);
+			}
+
+		};
+	}
 }
