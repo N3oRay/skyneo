@@ -1,0 +1,39 @@
+id;name;level;description;type;classe;eco;consum
+1;be quiet! Pure Power 13 M;1;Alimentation PC 1000 W rendement jusqu’à 94,4 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;1000W
+2;be quiet! Pure Power 13 M;1;Alimentation PC 850 W rendement jusqu’à 94,4 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;850W
+3;be quiet! Pure Power 13 M;1;Alimentation PC 750 W rendement jusqu’à 94,3 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;750W
+4;be quiet! Pure Power 13 M;1;Alimentation PC 650 W rendement jusqu’à 94,2 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;650W
+5;CORSAIR RM850x;1;Alimentation PC 850 W rendement jusqu’à 91 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;850W
+6;CORSAIR RM1000x;1;Alimentation PC 1000 W rendement jusqu’à 91 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;1000W
+7;CORSAIR RM750x;1;Alimentation PC 1000 W rendement jusqu’à 91 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;750W
+8;CORSAIR RM650x;1;Alimentation PC 1000 W rendement jusqu’à 91 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;650W
+9;CORSAIR RM550x;1;Alimentation PC 1000 W rendement jusqu’à 91 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;550W
+10;be quiet! Pure Power 12 M;1;Alimentation PC 550 W rendement jusqu’à 92,8 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;550W
+11;be quiet! Pure Power 12 M;1;Alimentation PC 750 W rendement jusqu’à 92,6 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;750W
+12;be quiet! Pure Power 12 M;1;Alimentation PC 850 W rendement jusqu’à 93,2 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;850W
+13;be quiet! Pure Power 12 M;1;Alimentation PC 1000 W rendement jusqu’à 93,1 % PCIe 5.1, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;1000W
+14;ASUS TUF GAMING;1;Alimentation PC 850 W, Modulaire ATX 3.0, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;850W
+15;ASUS TUF GAMING;1;Alimentation PC 750 W, Modulaire ATX 3.0, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;750W
+16;ASUS TUF GAMING;1;Alimentation PC 1000 W, Modulaire ATX 3.0, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;1000W
+17;ASUS TUF GAMING;1;Alimentation PC 1200 W, Modulaire ATX 3.0, Certification Gold;ATX 3.1 certifiée 80 PLUS® Gold; 80 PLUS Gold;AAA;1200W
+18;ASUS ROG Strix;1;Alimentation PC 1000 W rendement jusqu’à 93 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® PLATINUM; 80 PLUS Gold;AAA;1000W
+19;ASUS ROG Strix Platinum White;1;Alimentation PC 1000 W rendement jusqu’à 93 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS® PLATINUM; 80 PLUS Gold;AAA;1000W
+20;MSI MPG A1000G PCIE5;1;Alimentation PC 1000 W rendement jusqu’à 90 %, Modulaire ATX 3.0, Certification Gold;ATX 3.0 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1000W
+21;MSI MAG A750GL PCIE5;1;Alimentation PC 1000 W rendement jusqu’à 90 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;750W
+22;MSI MAG A850GL PCIE5;1;Alimentation PC 1000 W rendement jusqu’à 90 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;850W
+23;MSI MAG A1250GL PCIE5;1;Alimentation PC 1000 W rendement jusqu’à 90 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1250W
+24;LC - POWER Blanc Super Silent Modular;1;Alimentation PC 1000 W rendement jusqu’à 90 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1000W
+25;LC - POWER Alimentation PC Modulaire;1;Alimentation PC 1000 W rendement jusqu’à 90 %, Modulaire ATX 3.0, Certification Gold;ATX 3.0 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1000W
+26;LC - POWER Alimentation PC Modulaire;1;Alimentation PC 550 W rendement jusqu’à 90 %, Modulaire ATX 3.0, Certification Gold;ATX 3.0 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;550W
+27;LC - POWER Alimentation PC Modulaire;1;Alimentation PC 650 W rendement jusqu’à 90 %, Modulaire ATX 3.0, Certification Gold;ATX 3.0 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;650W
+28;NZXT C1000 Gold ATX 3.1;1;Alimentation PC 1000 W rendement jusqu’à 91,2 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1000W
+29;NZXT C1500 Platinum ATX 3.1;1;Alimentation PC 1500 W rendement jusqu’à 94,2 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS Platinum; 80 PLUS Gold;AAA;1500W
+30;NZXT C750 Bronze ATX 3.1;1;Alimentation PC 750 W rendement jusqu’à 88 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;750W
+31;NZXT C850 Bronze ATX 3.1;1;Alimentation PC 850 W rendement jusqu’à 90 %, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;850W
+32;NZXT C1500 Platinum ATX 3.1;1;Alimentation PC 1200 W rendement jusqu’à 90 % à 50 % de charge, Modulaire ATX 3.1, Certification Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1200W
+33;PCCOOLER CPS YS1200 ATX 3.1;1;Alim PC 1200 W rendement jusqu’à 90 % à 50 % de charge, Modulaire ATX 3.1, Certification 80 PLUS et Cybenetics Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1200W
+34;Thermaltake Toughpower GT 850W ATX 3.1;1;Alim PC 850 W rendement jusqu’à 849.6W, Modulaire ATX 3.1, Certification 80 PLUS Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;850W
+35;Thermaltake Toughpower GT 1000W Black ATX 3.1;1;Alim PC 1000 W PCIe5.1, Modulaire ATX 3.1, Certification 80 PLUS Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1000W
+36;Thermaltake Toughpower GT 1000W Snow ATX 3.1;1;Alim PC 1000 W PCIe5.1, Modulaire ATX 3.1, Certification 80 PLUS Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1000W
+37;Thermaltake Toughpower GT 1200W Black ATX 3.1;1;Alim PC 1200 W PCIe5.1, Modulaire ATX 3.1, Certification 80 PLUS Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1200W
+38;Thermaltake Toughpower GT 1200W Snow ATX 3.1;1;Alim PC 1200 W PCIe5.1, Modulaire ATX 3.1, Certification 80 PLUS Gold;ATX 3.1 certifiée 80 PLUS Gold; 80 PLUS Gold;AAA;1200W

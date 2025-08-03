@@ -11,65 +11,43 @@
     <property name="now" value="getdate()" dbms="mssql"/>
 
       <changeSet author="s.lopes" id="00000000000038">
-        <insert tableName="sos_alimentation">
-            <column name="name" value="Test Alimentation 2"/>
-            <column name="level" value="1"/>
-            <column name="description" value="Nouveau 2..."/>
-            <column name="type" value="80+"/>
-            <column name="classe" value="80+"/>
-            <column name="eco" value="AAA"/>
-            <column name="consum" value="80+"/>
-        </insert>
 
-        <insert tableName="sos_laptop">
-            <column name="name" value="Test laptop 2"/>
-            <column name="level" value="1"/>
-            <column name="description" value="Nouveau 2..."/>
-            <column name="type" value="80+"/>
-            <column name="classe" value="80+"/>
-            <column name="eco" value="AAA"/>
-            <column name="consum" value="80+"/>
-        </insert>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/sos_alimentation.csv"
+                  separator=";"
+                  tableName="sos_alimentation"/>
+      </changeSet>
+      <changeSet author="s.lopes" id="00000000000039">
 
-        <insert tableName="sos_phone">
-            <column name="name" value="Test phone 2"/>
-            <column name="level" value="1"/>
-            <column name="description" value="Nouveau 2..."/>
-            <column name="type" value="80+"/>
-            <column name="classe" value="80+"/>
-            <column name="eco" value="AAA"/>
-            <column name="consum" value="80+"/>
-        </insert>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/sos_laptop.csv"
+                  separator=";"
+                  tableName="sos_laptop"/>
+      </changeSet>
+      <changeSet author="s.lopes" id="00000000000040">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/sos_phone.csv"
+                  separator=";"
+                  tableName="sos_phone"/>
+      </changeSet>
+      <changeSet author="s.lopes" id="00000000000041">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/sos_routeur.csv"
+                  separator=";"
+                  tableName="sos_routeur"/>
+      </changeSet>
+      <changeSet author="s.lopes" id="00000000000042">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/sos_serveur.csv"
+                  separator=";"
+                  tableName="sos_serveur"/>
+      </changeSet>
+      <changeSet author="s.lopes" id="00000000000043">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/sos_pc.csv"
+                  separator=";"
+                  tableName="sos_pc"/>
 
-        <insert tableName="sos_routeur">
-            <column name="name" value="Test routeur 2"/>
-            <column name="level" value="1"/>
-            <column name="description" value="Nouveau 2..."/>
-            <column name="type" value="80+"/>
-            <column name="classe" value="80+"/>
-            <column name="eco" value="AAA"/>
-            <column name="consum" value="80+"/>
-        </insert>
-
-        <insert tableName="sos_serveur">
-            <column name="name" value="Test serveur 2"/>
-            <column name="level" value="1"/>
-            <column name="description" value="Nouveau 2..."/>
-            <column name="type" value="80+"/>
-            <column name="classe" value="80+"/>
-            <column name="eco" value="AAA"/>
-            <column name="consum" value="80+"/>
-        </insert>
-
-        <insert tableName="sos_pc">
-            <column name="name" value="Test pc 2"/>
-            <column name="level" value="1"/>
-            <column name="description" value="Nouveau 2..."/>
-            <column name="type" value="80+"/>
-            <column name="classe" value="80+"/>
-            <column name="eco" value="AAA"/>
-            <column name="consum" value="80+"/>
-        </insert>
 
       </changeSet>
 
