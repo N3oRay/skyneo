@@ -117,12 +117,13 @@ git push -u origin main
 #************* Notice API ******************************************
 Exemple:
 http://127.0.0.1:8080/api/sos/alimentation?page=1&size=10&sort=id
+http://127.0.0.1:8080/api/sos/laptop?page=1&size=10&sort=id
+http://127.0.0.1:8080/api/sos/pc?page=1&size=100&sort=consum
+http://127.0.0.1:8080/api/sos/phone?page=1&size=100&sort=consum
+http://127.0.0.1:8080/api/sos/routeur?page=1&size=100&sort=name
+http://127.0.0.1:8080/api/sos/serveur?page=1&size=100&sort=name
 
-http://127.0.0.1:8080/api/sos/alimentation?page=1&size=100&sort=consum
-
-http://127.0.0.1:8080/api/sos/alimentation?page=1&size=100&sort=name
-
-#Note:
+#Notes:
 domain: backend/src/main/java/com/sos/obs/decc/domain/SosAlim.java
 repository : backend/src/main/java/com/sos/obs/decc/repository/SosAlimRepository.java
 rest : backend/src/main/java/com/sos/obs/decc/web/rest/SosAlimResource.java
