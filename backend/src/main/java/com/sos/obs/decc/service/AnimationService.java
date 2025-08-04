@@ -40,22 +40,22 @@ public class AnimationService {
         this.centerRepository = centerRepository;
     }
 
-    
-    
+
+
     public void deletevalue(String login) {
     	animationRepository.findById(login).ifPresent(value -> {
     	animationRepository.delete(value);
         log.debug("Deleted Site: {}", value);
     });
 	}
-	
+
 	public void deletevalueById(String id) {
 		animationRepository.findById(id).ifPresent(value -> {
 			animationRepository.delete(value);
 	        log.debug("Deleted Site: {}", value);
 	    });
 	}
-	
+
 	public void deletevalueByName(String name) {
 		animationRepository.findByName(name).ifPresent(value -> {
 		animationRepository.delete(value);
@@ -96,7 +96,7 @@ public class AnimationService {
         	} catch (Exception  e ) {
         	    log.info("Created de l'animation sans DashBoard ID");
         	}*/
-        	
+
         	try {
         		dashboardRepository.findByName(addanim.getDashboard().getName()).ifPresent(value -> {
         		animation.setDashboard(value);
@@ -107,22 +107,11 @@ public class AnimationService {
         	}
 
         }
-        
+
         // On authorise la création sans Centre de rattachement
         // Le centre depend uniquement du Dashboard, il n'est pas obligatoire.
 
         if (addanim.getCenter() != null) {
-        	// Recherche par id
-        	/*
-        	try {
-        		centerRepository.findById(addanim.getCenter().getId()).ifPresent(value -> {
-    			animation.setCenter(value);
-    			log.info("Created de l'animation avec Centre ID");
-    		});
-        	} catch (Exception  e ) {
-        		log.info("Created de l'animation sans Centre ID");
-        	}*/
-        	
         	// Recherche par nom
         	try {
         		centerRepository.findByName(addanim.getCenter().getName()).ifPresent(value -> {
@@ -149,12 +138,12 @@ public class AnimationService {
     }
 
 
-      
+
     @Transactional(readOnly = true)
     public Page<Animation> findAll(Pageable paging) {
-    	
+
     	List<Animation> users = animationRepository.findAll();
-    	
+
         Pageable pagiable = PageRequest.of(paging.getPageNumber() - 1, paging.getPageSize());
         int start = (paging.getPageNumber() - 1) * paging.getPageSize();
         int end = start + paging.getPageSize();
@@ -165,13 +154,13 @@ public class AnimationService {
             if (start < users.size()) {
             	users.size();
                 return new PageImpl<>(users.subList(start, users.size()), pagiable, users.size());
-  
+
             }
         }
 		return null;
     }
 
-    
+
     @Transactional(readOnly = true)
     public Optional<Animation> getAnimation(Animation a) {
     	if (a.getId() != null) {

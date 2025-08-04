@@ -15,22 +15,22 @@ public class AnimationDTO {
     @NotNull
     @Size(min = 1, max = 100)
     private String name;
-    
-    
+
+
     private String centrename;
-    
-    
+
+
     // Message simple
     @Size(min = 1, max = 256)
     private String message_s;
-    
+
 
 
 	// Message defilant
     @Size(min = 1, max = 256)
     private String message_d;
-    
-    
+
+
     public String getMessage_s() {
 		return message_s;
 	}
@@ -38,8 +38,8 @@ public class AnimationDTO {
 	public void setMessage_s(String message_s) {
 		this.message_s = message_s;
 	}
-    
-    
+
+
     public String getMessage_d() {
 		return message_d;
 	}
@@ -56,14 +56,10 @@ public class AnimationDTO {
 
     public AnimationDTO(Animation animation) {
         this.id = animation.getId();
-//        this.authorities = user.getAuthorities().stream()
-//            .map(Authority::getName)
-//            .collect(Collectors.toSet());
         this.name = animation.getName();
-        //this.centers = ((Collection<Center>) user.getCenter()).stream().collect(Collectors.toSet());
     }
-    
-    
+
+
     public AnimationDTO(String id, String centrename, String anName, String message_s, String message_d) {
     	this.id = id;
 		this.centrename = centrename;
@@ -88,15 +84,5 @@ public class AnimationDTO {
 		this.centrename = centrename;
 	}
 
-    /*
-    public Set<Center> getCenters() {
-        return centers;
-    }
 
-    public void setCenters(Set<Center> centers) {
-        this.centers = centers;
-    }
-
-*/
-    
 }

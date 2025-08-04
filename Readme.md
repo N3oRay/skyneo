@@ -13,7 +13,7 @@ sudo docker ps -s
 sudo docker exec -it mysqldb bash
 $ mysql -u root -p
 
-or
+# or
 
 $ mysql -u dashuser -p
 
@@ -46,6 +46,16 @@ SHOW FULL TABLES FROM mydb;
 7 rows in set (0.01 sec)
 
 SHOW FULL TABLES FROM DashboardAdmin;
+#** sample MySQL Select
+mysql> select * from DashboardAdmin.sos_alimentation;
+mysql> select * from DashboardAdmin.sos_laptop;
+mysql> select * from DashboardAdmin.sos_pc;
+mysql> select * from DashboardAdmin.sos_phone;
+mysql> select * from DashboardAdmin.sos_routeur;
+mysql> select * from DashboardAdmin.sos_serveur;
+
+
+
 
 #*** For build on ligne:
 
@@ -104,8 +114,22 @@ git remote add origin https://github.com/N3oRay/skyneo.git
 
 git push -u origin main
 
-#************* Notice API ***************************
+#************* Notice API ******************************************
+Exemple:
+http://127.0.0.1:8080/api/sos/alimentation?page=1&size=10&sort=id
 
+http://127.0.0.1:8080/api/sos/alimentation?page=1&size=100&sort=consum
+
+http://127.0.0.1:8080/api/sos/alimentation?page=1&size=100&sort=name
+
+#Note:
+domain: backend/src/main/java/com/sos/obs/decc/domain/SosAlim.java
+repository : backend/src/main/java/com/sos/obs/decc/repository/SosAlimRepository.java
+rest : backend/src/main/java/com/sos/obs/decc/web/rest/SosAlimResource.java
+
+#************* Notice API Secure ( Admin) ***************************
+http://127.0.0.1:8080/
+http://127.0.0.1:8080/api/
 http://127.0.0.1:8080/api/admin
 http://127.0.0.1:8080/api/admin/animation
 http://127.0.0.1:8080/management/audits      GET param : fromDate, toDate

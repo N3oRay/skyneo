@@ -32,7 +32,7 @@ public class CenterDTO {
 
 
     private Set<Site> sites = new HashSet<>();
-    
+
     public Set<Site> getSites() {
 		return sites;
 	}
@@ -46,7 +46,7 @@ public class CenterDTO {
 	public CenterDTO() {
         // Empty constructor needed for Jackson.
     }
-    
+
 
     public CenterDTO(Center center) {
         this.id = center.getId();
@@ -54,7 +54,6 @@ public class CenterDTO {
         this.name = center.getName();
         this.evitaId = center.getEvitaId();
         this.sites = center.getSites();
-       // this.animations = center.getAnimations().stream().collect(Collectors.toSet());
     }
 
     public String getId() {

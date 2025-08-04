@@ -33,15 +33,15 @@ import com.sos.obs.decc.security.jwt.TokenProvider;
 @Import(SecurityProblemSupport.class)
 @ComponentScan("com.sos.obs.decc")
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-   
+
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
     private final UserDetailsService userDetailsService;
-   
+
     private final TokenProvider tokenProvider;
-   
+
     private final CorsFilter corsFilter;
-   
+
     private final SecurityProblemSupport problemSupport;
 
 	public SecurityConfiguration(AuthenticationManagerBuilder authenticationManagerBuilder,
@@ -75,7 +75,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-    
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
@@ -86,7 +86,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/swagger-ui/index.html")
             .antMatchers("/test/**");
     }
-    
+
     //https://www.baeldung.com/spring-security-session
     //https://stackoverflow.com/questions/55934004/server-session-cookie-max-age-doesnt-seem-to-work
     @Override
@@ -130,11 +130,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .and()
         .apply(securityConfigurerAdapter());
     }
-    
+
 
     private JWTConfigurer securityConfigurerAdapter() {
         return new JWTConfigurer(tokenProvider);
     }
-   
-    
+
+
 }

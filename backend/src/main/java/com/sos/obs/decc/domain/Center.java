@@ -25,7 +25,7 @@ import org.hibernate.annotations.BatchSize;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * @Author Serge LOPES 2020
+ * @Author Serge LOPES
  */
 
 @Entity
@@ -62,8 +62,8 @@ public class Center implements Serializable {
         inverseJoinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")})
     @BatchSize(size = 20)
     private Set<User> users = new HashSet<>();
-    
-    
+
+
     @JsonIgnore
     @ManyToMany
     @JoinTable(
@@ -72,7 +72,7 @@ public class Center implements Serializable {
         inverseJoinColumns = {@JoinColumn(name = "site_id", referencedColumnName = "id")})
     @BatchSize(size = 20)
     private Set<Site> sites = new HashSet<>();
-    
+
     @JsonIgnore
     @OneToMany(targetEntity = Animation.class, mappedBy = "id", orphanRemoval = false, fetch = FetchType.LAZY)
 	private Set<Animation> animations;
