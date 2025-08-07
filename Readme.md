@@ -1,4 +1,6 @@
-
+# PROJET SOS 
+POC complet sous Docker compose avec MySQL 8 pour la base de données, un front avec Angular / BootStrap.
+Et un backend sous Spring Boot avec Liquibase.
 
 #** Build with docker compose:
 
@@ -156,3 +158,4 @@ POST
 /api/admin
 
 /api/admin/users
+
